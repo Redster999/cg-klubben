@@ -23,29 +23,6 @@ body {
   line-height: 1.25;
 }
 
-.wp-admin-bar {
-  background: #131b22;
-  color: #f7f7f7;
-  font-family: "Libre Franklin", Arial, sans-serif;
-  font-size: 14px;
-}
-
-.wp-admin-inner {
-  max-width: 1160px;
-  margin: 0 auto;
-  padding: 12px 18px;
-}
-
-.wp-upgrade-banner {
-  background: #efefef;
-  border-bottom: 1px solid #ddd;
-  color: #1a1a1a;
-  font-family: "Libre Franklin", Arial, sans-serif;
-  font-size: 15px;
-  padding: 15px 22px;
-  text-align: center;
-}
-
 .site-header {
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
