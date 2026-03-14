@@ -1,6 +1,5 @@
 :root {
   --paper-yellow: #cdbf19;
-  --header-black: #0a0a0a;
   --line: rgba(0, 0, 0, 0.14);
   --text: #060606;
   --muted: rgba(0, 0, 0, 0.63);
@@ -26,27 +25,8 @@ body {
 .site-header {
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
-  padding: 48px 20px 30px;
+  padding: 34px 20px 30px;
   text-align: center;
-}
-
-.site-tools {
-  align-items: center;
-  background: var(--header-black);
-  color: #fff;
-  display: inline-flex;
-  font-family: "Libre Franklin", Arial, sans-serif;
-  gap: 40px;
-  height: 44px;
-  justify-content: center;
-  margin-bottom: 38px;
-  min-width: 200px;
-  padding: 0 26px;
-}
-
-.site-tools span {
-  font-size: 17px;
-  letter-spacing: 0.08em;
 }
 
 .site-header h1 {
@@ -141,34 +121,6 @@ body {
   text-underline-offset: 4px;
 }
 
-.site-footer {
-  border-top: 1px solid var(--line);
-  color: var(--muted);
-  font-family: "Playfair Display", Georgia, serif;
-  font-size: 34px;
-  font-style: italic;
-  margin-top: 40px;
-  padding: 26px;
-  text-align: center;
-}
-
-.floating-menu {
-  align-items: center;
-  background: #000;
-  border: 0;
-  border-radius: 50%;
-  bottom: 70px;
-  color: #fff;
-  cursor: pointer;
-  display: flex;
-  font-size: 26px;
-  height: 68px;
-  justify-content: center;
-  position: fixed;
-  right: 26px;
-  width: 68px;
-}
-
 @media (max-width: 1100px) {
   .site-header h1 {
     font-size: 42px;
@@ -192,15 +144,6 @@ body {
 }
 
 @media (max-width: 860px) {
-  .site-header {
-    padding-top: 34px;
-  }
-
-  .site-tools {
-    margin-bottom: 28px;
-    min-width: 160px;
-  }
-
   .site-header h1 {
     font-size: 34px;
   }
@@ -231,16 +174,5 @@ body {
 
   .entry-copy {
     font-size: 32px;
-  }
-
-  .site-footer {
-    font-size: 20px;
-  }
-
-  .floating-menu {
-    bottom: 16px;
-    height: 54px;
-    right: 16px;
-    width: 54px;
   }
 }
