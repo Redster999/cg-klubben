@@ -1,0 +1,269 @@
+:root {
+  --paper-yellow: #cdbf19;
+  --header-black: #0a0a0a;
+  --line: rgba(0, 0, 0, 0.14);
+  --text: #060606;
+  --muted: rgba(0, 0, 0, 0.63);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  background: var(--paper-yellow);
+  color: var(--text);
+  font-family: "Playfair Display", Georgia, serif;
+  line-height: 1.25;
+}
+
+.wp-admin-bar {
+  background: #131b22;
+  color: #f7f7f7;
+  font-family: "Libre Franklin", Arial, sans-serif;
+  font-size: 14px;
+}
+
+.wp-admin-inner {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 12px 18px;
+}
+
+.wp-upgrade-banner {
+  background: #efefef;
+  border-bottom: 1px solid #ddd;
+  color: #1a1a1a;
+  font-family: "Libre Franklin", Arial, sans-serif;
+  font-size: 15px;
+  padding: 15px 22px;
+  text-align: center;
+}
+
+.site-header {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 48px 20px 30px;
+  text-align: center;
+}
+
+.site-tools {
+  align-items: center;
+  background: var(--header-black);
+  color: #fff;
+  display: inline-flex;
+  font-family: "Libre Franklin", Arial, sans-serif;
+  gap: 40px;
+  height: 44px;
+  justify-content: center;
+  margin-bottom: 38px;
+  min-width: 200px;
+  padding: 0 26px;
+}
+
+.site-tools span {
+  font-size: 17px;
+  letter-spacing: 0.08em;
+}
+
+.site-header h1 {
+  font-family: "Libre Franklin", Arial, sans-serif;
+  font-size: 50px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  margin: 0;
+}
+
+.site-header p {
+  font-size: 38px;
+  font-style: italic;
+  margin: 16px 0 0;
+}
+
+.main-nav {
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  flex-wrap: wrap;
+  font-family: "Libre Franklin", Arial, sans-serif;
+  gap: 0;
+  justify-content: center;
+  padding: 14px 12px;
+  row-gap: 8px;
+  text-transform: uppercase;
+}
+
+.main-nav a {
+  color: #0a0a0a;
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  padding: 0 16px;
+  position: relative;
+  text-decoration: none;
+}
+
+.main-nav a:not(:first-child)::before {
+  content: "•";
+  left: -3px;
+  position: absolute;
+  top: 0;
+}
+
+.content {
+  margin: 0 auto;
+  max-width: 1380px;
+  padding: 92px 34px 120px;
+}
+
+.content h2 {
+  font-size: clamp(64px, 8vw, 98px);
+  font-style: italic;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  line-height: 0.98;
+  margin: 0 0 36px;
+}
+
+.entry-layout {
+  display: grid;
+  gap: 40px;
+  grid-template-columns: 320px 1fr;
+}
+
+.entry-meta {
+  border-top: 1px solid var(--line);
+  font-family: "Libre Franklin", Arial, sans-serif;
+}
+
+.entry-meta p {
+  border-bottom: 1px solid var(--line);
+  font-size: 33px;
+  letter-spacing: 0.03em;
+  margin: 0;
+  padding: 15px 0;
+}
+
+.entry-copy {
+  font-size: clamp(30px, 2.3vw, 56px);
+  max-width: 900px;
+}
+
+.entry-copy p {
+  margin: 0;
+}
+
+.entry-copy a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.site-footer {
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 34px;
+  font-style: italic;
+  margin-top: 40px;
+  padding: 26px;
+  text-align: center;
+}
+
+.floating-menu {
+  align-items: center;
+  background: #000;
+  border: 0;
+  border-radius: 50%;
+  bottom: 70px;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  font-size: 26px;
+  height: 68px;
+  justify-content: center;
+  position: fixed;
+  right: 26px;
+  width: 68px;
+}
+
+@media (max-width: 1100px) {
+  .site-header h1 {
+    font-size: 42px;
+  }
+
+  .site-header p {
+    font-size: 32px;
+  }
+
+  .main-nav a {
+    font-size: 20px;
+  }
+
+  .entry-meta p {
+    font-size: 22px;
+  }
+
+  .entry-copy {
+    font-size: clamp(26px, 3vw, 42px);
+  }
+}
+
+@media (max-width: 860px) {
+  .site-header {
+    padding-top: 34px;
+  }
+
+  .site-tools {
+    margin-bottom: 28px;
+    min-width: 160px;
+  }
+
+  .site-header h1 {
+    font-size: 34px;
+  }
+
+  .site-header p {
+    font-size: 22px;
+    margin-top: 8px;
+  }
+
+  .content {
+    padding: 42px 20px 100px;
+  }
+
+  .content h2 {
+    line-height: 1.04;
+    margin-bottom: 24px;
+  }
+
+  .entry-layout {
+    gap: 24px;
+    grid-template-columns: 1fr;
+  }
+
+  .entry-meta p {
+    font-size: 16px;
+    padding: 11px 0;
+  }
+
+  .entry-copy {
+    font-size: 32px;
+  }
+
+  .site-footer {
+    font-size: 20px;
+  }
+
+  .floating-menu {
+    bottom: 16px;
+    height: 54px;
+    right: 16px;
+    width: 54px;
+  }
+}
