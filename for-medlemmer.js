@@ -65,7 +65,7 @@ function wallItemTemplate(item) {
   li.className = 'wall-item';
 
   const title = document.createElement('h4');
-  title.textContent = item.isDeleted ? 'Slettet av styret.' : item.title;
+  title.textContent = item.title;
 
   const body = document.createElement('p');
   body.textContent = item.body;
@@ -76,12 +76,10 @@ function wallItemTemplate(item) {
   meta.textContent = `${authorLabel} - ${formatTimestamp(item.createdAt)}`;
 
   li.appendChild(title);
-  if (!item.isDeleted) {
-    li.appendChild(body);
-    li.appendChild(meta);
-  }
+  li.appendChild(body);
+  li.appendChild(meta);
 
-  if (currentUser && currentUser.role === 'styret' && !item.isDeleted) {
+  if (currentUser && currentUser.role === 'styret') {
     const actionsRow = document.createElement('div');
     actionsRow.className = 'wall-item-actions';
 

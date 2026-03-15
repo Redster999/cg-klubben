@@ -7,7 +7,7 @@ module.exports = async function handler(req, res) {
   }
 
   try {
-    await query(`DELETE FROM wall_posts WHERE is_deleted = TRUE AND deleted_at < NOW() - INTERVAL '24 hours'`);
+    await query(`DELETE FROM wall_posts WHERE is_deleted = TRUE`);
 
     const result = await query(
       `SELECT id,
@@ -16,7 +16,6 @@ module.exports = async function handler(req, res) {
               created_at AS "createdAt"
        FROM wall_posts
        WHERE show_on_frontpage = TRUE
-         AND is_deleted = FALSE
        ORDER BY created_at DESC
        LIMIT 40`
     );
