@@ -1,5 +1,6 @@
 :root {
-  --paper-yellow: #cdbf19;
+  --paper-yellow: #ffffff;
+  --light-blue: #d7efff;
   --line: rgba(0, 0, 0, 0.14);
   --text: #060606;
   --muted: rgba(0, 0, 0, 0.63);
@@ -92,34 +93,43 @@ body {
   display: flex;
   flex-wrap: wrap;
   font-family: "Libre Franklin", Arial, sans-serif;
-  gap: 0;
+  gap: 10px;
   justify-content: center;
   padding: 14px 12px;
-  row-gap: 8px;
+  row-gap: 10px;
   text-transform: uppercase;
 }
 
 .main-nav a {
+  background: #f8f8f8;
+  border: 1px solid var(--line);
+  border-radius: 8px;
   color: #0a0a0a;
-  font-size: 28px;
+  font-size: 24px;
   font-weight: 600;
   letter-spacing: 0.01em;
-  padding: 0 16px;
-  position: relative;
+  padding: 10px 18px;
   text-decoration: none;
 }
 
+.main-nav a:hover,
+.main-nav a:focus-visible {
+  background: #efefef;
+}
+
 .main-nav a:not(:first-child)::before {
-  content: "•";
-  left: -3px;
-  position: absolute;
-  top: 0;
+  content: none;
+}
+
+.main-nav .members-link {
+  background: var(--light-blue);
+  border-color: #9dc6df;
 }
 
 .content {
   margin: 0 auto;
   max-width: 1380px;
-  padding: 92px 34px 120px;
+  padding: 54px 34px 120px;
 }
 
 .content h2 {
@@ -144,12 +154,14 @@ body {
 }
 
 .welcome-card h3 {
-  border-bottom: 1px solid var(--line);
+  background: var(--light-blue);
+  border: 1px solid #9dc6df;
+  color: #000;
   font-family: "Libre Franklin", Arial, sans-serif;
   font-size: clamp(22px, 2vw, 30px);
   letter-spacing: 0.02em;
   margin: 0 0 18px;
-  padding-bottom: 12px;
+  padding: 12px 14px;
   text-transform: uppercase;
 }
 
@@ -222,6 +234,15 @@ body {
   text-underline-offset: 3px;
 }
 
+.members-content .welcome-grid {
+  grid-template-columns: minmax(0, 760px);
+  justify-content: center;
+}
+
+.members-content .welcome-card {
+  min-height: auto;
+}
+
 .entry-layout {
   display: grid;
   gap: 40px;
@@ -275,7 +296,8 @@ body {
   }
 
   .main-nav a {
-    font-size: 20px;
+    font-size: 18px;
+    padding: 8px 14px;
   }
 
   .entry-meta p {
