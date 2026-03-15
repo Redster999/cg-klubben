@@ -49,12 +49,17 @@
             <label for="member-employee-admin">Ansattnummer</label>
             <input id="member-employee-admin" type="text" required />
 
+            <label class="check-row" for="member-is-board-admin">
+              <input id="member-is-board-admin" type="checkbox" />
+              Styret
+            </label>
+
             <button type="submit" class="action-btn">Legg til medlem</button>
 
             <label for="member-csv-file">Importer medlemmer fra CSV</label>
             <input id="member-csv-file" type="file" accept=".csv,text/csv" />
             <button id="member-import-button" type="button" class="secondary-btn">Importer CSV</button>
-            <p class="feed-status">Bruk fil med kolonner for navn, epost, telefonnummer og ansattnummer.</p>
+            <p class="feed-status">Bruk fil med kolonner for navn, epost, telefonnummer og ansattnummer. Import oppdaterer eksisterende medlemmer.</p>
           </form>
 
           <div class="member-table-wrap">
@@ -65,12 +70,13 @@
                   <th>Epost</th>
                   <th>Telefonnummer</th>
                   <th>Ansattnummer</th>
+                  <th>Styret</th>
                   <th></th>
                 </tr>
               </thead>
               <tbody id="member-table-body">
                 <tr>
-                  <td colspan="5">Laster medlemmer...</td>
+                  <td colspan="6">Laster medlemmer...</td>
                 </tr>
               </tbody>
             </table>

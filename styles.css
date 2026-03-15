@@ -415,6 +415,16 @@ body {
   text-align: left;
 }
 
+.member-table td input[type='checkbox'] {
+  height: 16px;
+  width: 16px;
+}
+
+.member-action-cell {
+  display: flex;
+  gap: 8px;
+}
+
 .admin-actions {
   align-items: center;
   display: flex;

@@ -36,8 +36,14 @@ async function ensureSchema() {
         email TEXT NOT NULL,
         phone TEXT NOT NULL UNIQUE,
         employee_number TEXT NOT NULL UNIQUE,
+        is_board BOOLEAN NOT NULL DEFAULT FALSE,
         created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
       );
+    `);
+
+    await client.query(`
+      ALTER TABLE members
+      ADD COLUMN IF NOT EXISTS is_board BOOLEAN NOT NULL DEFAULT FALSE;
     `);
 
     await client.query(`

@@ -3,7 +3,7 @@ const { query } = require('../_lib/db');
 const { setSession } = require('../_lib/session');
 
 function normalizePhone(phone) {
-  return String(phone || '').replace(/[^0-9+]/g, '');
+  return String(phone || '').replace(/[^0-9]/g, '');
 }
 
 function normalizeEmployeeNumber(value) {

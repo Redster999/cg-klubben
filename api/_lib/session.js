@@ -15,9 +15,11 @@ function requiredEnv(name) {
 }
 
 function boardCredentials() {
+  const password = String(process.env.BOARD_PASSWORD || '');
   return {
     username: process.env.BOARD_USERNAME || 'styret',
-    password: requiredEnv('BOARD_PASSWORD'),
+    password,
+    configured: Boolean(password),
   };
 }
 

@@ -1,5 +1,14 @@
 const { badRequest, forbidden, isSameOrigin, methodNotAllowed, parseJsonBody, sendJson, serverError, unauthorized } = require('../_lib/http');
+const { query } = require('../_lib/db');
 const { boardCredentials, safeEqual, setAdminSession, setSession } = require('../_lib/session');
+
+function normalizePhone(phone) {
+  return String(phone || '').replace(/[^0-9]/g, '');
+}
+
+function normalizeEmployeeNumber(value) {
+  return String(value || '').replace(/\s+/g, '');
+}
 
 module.exports = async function handler(req, res) {
   if (req.method !== 'POST') {
@@ -19,23 +28,39 @@ module.exports = async function handler(req, res) {
       return badRequest(res, 'Brukernavn og passord er påkrevd');
     }
 
-    const board = boardCredentials();
-    const usernameOk = safeEqual(username, board.username);
-    const passwordOk = safeEqual(password, board.password);
+    const phone = normalizePhone(username);
+    const employeeNumber = normalizeEmployeeNumber(password);
 
-    if (!usernameOk || !passwordOk) {
+    if (phone && employeeNumber) {
+      const memberResult = await query(
+        `SELECT id, name
+         FROM members
+         WHERE is_board = TRUE
+           AND phone = $1
+           AND employee_number = $2
+         LIMIT 1`,
+        [phone, employeeNumber]
+      );
+
+      const member = memberResult.rows[0];
+      if (member) {
+        setSession(res, req, { role: 'styret', memberId: member.id, name: member.name });
+        setAdminSession(res, req);
+        return sendJson(res, 200, { ok: true, role: 'styret', scope: 'admin', source: 'member' });
+      }
+    }
+
+    const board = boardCredentials();
+    const envLoginOk = board.configured && safeEqual(username, board.username) && safeEqual(password, board.password);
+    if (!envLoginOk) {
       return unauthorized(res, 'Ugyldig innlogging');
     }
 
     setSession(res, req, { role: 'styret', name: 'Styret' });
     setAdminSession(res, req);
-    return sendJson(res, 200, { ok: true, role: 'styret', scope: 'admin' });
+    return sendJson(res, 200, { ok: true, role: 'styret', scope: 'admin', source: 'env' });
   } catch (error) {
     console.error('styret-elevated-login error', error);
-    if (error && typeof error.message === 'string' && error.message.startsWith('Missing required environment variable:')) {
-      const missingName = error.message.split(':').slice(1).join(':').trim();
-      return serverError(res, `Serverkonfigurasjon mangler: ${missingName}`);
-    }
     return serverError(res);
   }
 };

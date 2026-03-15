@@ -125,6 +125,7 @@ function csvRowsToMembers(rows) {
   }
 
   const members = [];
+  const skippedRows = [];
   for (let rowIndex = 1; rowIndex < rows.length; rowIndex += 1) {
     const row = rows[rowIndex];
     const firstName = firstNameIndex === -1 ? '' : String(row[firstNameIndex] || '').trim();
@@ -140,13 +141,17 @@ function csvRowsToMembers(rows) {
     }
 
     if (!name || !email || !phone || !employeeNumber) {
-      throw new Error(`Ufullstendig data på rad ${rowIndex + 1}.`);
+      skippedRows.push({
+        line: rowIndex + 1,
+        reason: 'Mangler navn, epost, telefonnummer eller ansattnummer',
+      });
+      continue;
     }
 
     members.push({ name, email, phone, employeeNumber });
   }
 
-  return members;
+  return { members, skippedRows };
 }
 
 function memberRowTemplate(member) {
@@ -164,7 +169,33 @@ function memberRowTemplate(member) {
   const employeeCell = document.createElement('td');
   employeeCell.textContent = member.employeeNumber;
 
+  const boardCell = document.createElement('td');
+  const boardCheckbox = document.createElement('input');
+  boardCheckbox.type = 'checkbox';
+  boardCheckbox.checked = Boolean(member.isBoard);
+  boardCheckbox.setAttribute('aria-label', `Marker ${member.name} som styre`);
+  boardCell.appendChild(boardCheckbox);
+
   const actionCell = document.createElement('td');
+  actionCell.className = 'member-action-cell';
+  const saveButton = document.createElement('button');
+  saveButton.type = 'button';
+  saveButton.className = 'secondary-btn';
+  saveButton.textContent = 'Lagre';
+  saveButton.addEventListener('click', async () => {
+    try {
+      await apiFetch(`/api/admin/members?id=${member.id}`, {
+        method: 'PATCH',
+        body: JSON.stringify({ isBoard: boardCheckbox.checked }),
+      });
+
+      setStatus(`Styrerolle oppdatert for ${member.name}.`);
+      await loadMembers();
+    } catch (error) {
+      setStatus(error.message, true);
+    }
+  });
+
   const button = document.createElement('button');
   button.type = 'button';
   button.className = 'delete-btn';
@@ -183,11 +214,13 @@ function memberRowTemplate(member) {
     }
   });
 
+  actionCell.appendChild(saveButton);
   actionCell.appendChild(button);
   tr.appendChild(nameCell);
   tr.appendChild(emailCell);
   tr.appendChild(phoneCell);
   tr.appendChild(employeeCell);
+  tr.appendChild(boardCell);
   tr.appendChild(actionCell);
 
   return tr;
@@ -206,7 +239,7 @@ async function loadMembers() {
   if (!members.length) {
     const tr = document.createElement('tr');
     const td = document.createElement('td');
-    td.colSpan = 5;
+    td.colSpan = 6;
     td.textContent = 'Ingen medlemmer registrert enda.';
     tr.appendChild(td);
     body.appendChild(tr);
@@ -259,6 +292,7 @@ async function handleMemberCreate(event) {
         email: document.getElementById('member-email').value,
         phone: document.getElementById('member-phone-admin').value,
         employeeNumber: document.getElementById('member-employee-admin').value,
+        isBoard: document.getElementById('member-is-board-admin').checked,
       }),
     });
 
@@ -288,37 +322,53 @@ async function handleMemberCsvImport() {
     setStatus('Leser CSV-fil...');
     const csvText = await file.text();
     const rows = parseCsvText(csvText);
-    const members = csvRowsToMembers(rows);
+    const parsed = csvRowsToMembers(rows);
+    const members = parsed.members;
+    const skippedRows = parsed.skippedRows;
 
     if (!members.length) {
-      throw new Error('Fant ingen medlemmer å importere.');
+      throw new Error('Fant ingen gyldige medlemmer å importere.');
     }
 
-    setStatus(`Importerer ${members.length} medlemmer...`);
+    setStatus(`Synkroniserer ${members.length} medlemmer...`);
 
-    let imported = 0;
-    let duplicates = 0;
+    let created = 0;
+    let updated = 0;
+    let unchanged = 0;
     let failed = 0;
 
     for (const member of members) {
       try {
-        await apiFetch('/api/admin/members', {
+        const result = await apiFetch('/api/admin/members', {
           method: 'POST',
-          body: JSON.stringify(member),
+          body: JSON.stringify({
+            ...member,
+            mode: 'sync',
+          }),
         });
-        imported += 1;
-      } catch (error) {
-        const message = String(error.message || '');
-        if (message.includes('finnes allerede')) {
-          duplicates += 1;
+
+        if (result.action === 'created') {
+          created += 1;
+        } else if (result.action === 'updated') {
+          updated += 1;
         } else {
-          failed += 1;
+          unchanged += 1;
         }
+      } catch (error) {
+        failed += 1;
       }
     }
 
     await loadMembers();
-    setStatus(`Import ferdig: ${imported} lagt til, ${duplicates} duplikater, ${failed} feilet.`, failed > 0);
+    const skippedPart = skippedRows.length ? `, ${skippedRows.length} hoppet over` : '';
+    const failedPart = failed ? `, ${failed} feilet` : '';
+    const firstSkipped = skippedRows.slice(0, 3).map((item) => `linje ${item.line}`).join(', ');
+    const skippedDetail = firstSkipped ? ` (${firstSkipped}${skippedRows.length > 3 ? ', ...' : ''})` : '';
+
+    setStatus(
+      `Synk ferdig: ${created} nye, ${updated} oppdatert, ${unchanged} uendret${skippedPart}${failedPart}${skippedDetail}.`,
+      failed > 0
+    );
   } catch (error) {
     setStatus(error.message, true);
   } finally {
