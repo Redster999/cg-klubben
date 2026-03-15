@@ -32,6 +32,9 @@ module.exports = async function handler(req, res) {
     return sendJson(res, 200, { ok: true, role: 'styret', scope: 'admin' });
   } catch (error) {
     console.error('styret-elevated-login error', error);
+    if (error && typeof error.message === 'string' && error.message.startsWith('Missing required environment variable:')) {
+      return serverError(res, 'Serverkonfigurasjon mangler. Sjekk BOARD_PASSWORD og SESSION_SECRET i Vercel.');
+    }
     return serverError(res);
   }
 };

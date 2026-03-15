@@ -48,6 +48,9 @@ module.exports = async function handler(req, res) {
       return sendJson(res, 200, { items: result.rows });
     } catch (error) {
       console.error('wall get error', error);
+      if (error && typeof error.message === 'string' && error.message.includes('Missing required environment variable: DATABASE_URL')) {
+        return serverError(res, 'DATABASE_URL mangler i Vercel.');
+      }
       return serverError(res);
     }
   }
@@ -89,6 +92,9 @@ module.exports = async function handler(req, res) {
     return sendJson(res, 201, { item: result.rows[0] });
   } catch (error) {
     console.error('wall post error', error);
+    if (error && typeof error.message === 'string' && error.message.includes('Missing required environment variable: DATABASE_URL')) {
+      return serverError(res, 'DATABASE_URL mangler i Vercel.');
+    }
     return serverError(res);
   }
 };

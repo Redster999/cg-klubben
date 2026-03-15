@@ -131,8 +131,12 @@ async function handleMemberLogin(event) {
 
     usernameInput.value = '';
     passwordInput.value = '';
-    setStatus('Innlogging vellykket.');
-    await refreshUserAndData();
+    try {
+      await refreshUserAndData();
+      setStatus('Innlogging vellykket.');
+    } catch (error) {
+      setStatus('Innlogging vellykket, men veggen kunne ikke lastes. Sjekk DATABASE_URL i Vercel.', true);
+    }
   } catch (error) {
     setStatus(error.message, true);
   }
@@ -155,8 +159,12 @@ async function handleStyretLogin(event) {
 
     userInput.value = '';
     passInput.value = '';
-    setStatus('Styret er logget inn.');
-    await refreshUserAndData();
+    try {
+      await refreshUserAndData();
+      setStatus('Styret er logget inn.');
+    } catch (error) {
+      setStatus('Styret er logget inn, men veggen kunne ikke lastes. Sjekk DATABASE_URL i Vercel.', true);
+    }
   } catch (error) {
     setStatus(error.message, true);
   }
