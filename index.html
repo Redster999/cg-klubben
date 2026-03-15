@@ -11,6 +11,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
+    <script src="feed.js" defer></script>
   </head>
   <body>
     <header class="site-header">
@@ -53,11 +54,29 @@
         </article>
         <article class="welcome-card">
           <h3>Aktuelt</h3>
-          <p>Her kommer aktuelle saker og oppdateringer.</p>
+          <ul class="feed-list" id="aktuelt-list">
+            <li class="feed-status">Henter nyheter...</li>
+          </ul>
+          <a
+            class="feed-all-link"
+            href="https://www.fellesforbundet.no/aktuelt/nyheter/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Se alle nyheter</a
+          >
         </article>
         <article class="welcome-card">
           <h3>Kursvirksomhet</h3>
-          <p>Her kommer informasjon om kurs og opplaering.</p>
+          <ul class="feed-list" id="kurs-list">
+            <li class="feed-status">Henter kurs...</li>
+          </ul>
+          <a
+            class="feed-all-link"
+            href="https://www.fellesforbundet.no/aktuelt/kurs-og-arrangementer/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Se alle kurs</a
+          >
         </article>
       </section>
     </main>
