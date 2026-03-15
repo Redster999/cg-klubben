@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="no">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Styret login - CG Klubben</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="styret-login.js" defer></script>
+  </head>
+  <body>
+    <main class="content admin-login-content">
+      <section class="welcome-grid admin-login-grid" aria-label="Styret admin login">
+        <article class="welcome-card auth-card">
+          <h3>Styret - #</h3>
+          <p>Logg inn for å åpne styresiden med innstillinger og medlemsliste.</p>
+
+          <form id="admin-login-form" class="auth-form" autocomplete="off" novalidate>
+            <label for="admin-user">Brukernavn</label>
+            <input
+              id="admin-user"
+              name="admin_user_code"
+              type="text"
+              autocomplete="off"
+              spellcheck="false"
+              required
+            />
+
+            <label for="admin-pass">Passord</label>
+            <input
+              id="admin-pass"
+              name="admin_pass_code"
+              type="password"
+              autocomplete="new-password"
+              spellcheck="false"
+              required
+            />
+
+            <button type="submit" class="action-btn">Logg inn</button>
+          </form>
+
+          <p id="admin-login-status" class="status-msg" role="status" aria-live="polite"></p>
+          <a class="feed-all-link" href="for-medlemmer.html">Tilbake til For medlemmer</a>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>

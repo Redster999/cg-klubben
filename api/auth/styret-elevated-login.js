@@ -1,0 +1,37 @@
+const { badRequest, forbidden, isSameOrigin, methodNotAllowed, parseJsonBody, sendJson, serverError, unauthorized } = require('../_lib/http');
+const { boardCredentials, safeEqual, setAdminSession, setSession } = require('../_lib/session');
+
+module.exports = async function handler(req, res) {
+  if (req.method !== 'POST') {
+    return methodNotAllowed(res, ['POST']);
+  }
+
+  if (!isSameOrigin(req)) {
+    return forbidden(res, 'Cross-origin request blocked');
+  }
+
+  try {
+    const body = await parseJsonBody(req);
+    const username = String(body.username || '').trim();
+    const password = String(body.password || '');
+
+    if (!username || !password) {
+      return badRequest(res, 'Brukernavn og passord er påkrevd');
+    }
+
+    const board = boardCredentials();
+    const usernameOk = safeEqual(username, board.username);
+    const passwordOk = safeEqual(password, board.password);
+
+    if (!usernameOk || !passwordOk) {
+      return unauthorized(res, 'Ugyldig innlogging');
+    }
+
+    setSession(res, req, { role: 'styret', name: 'Styret' });
+    setAdminSession(res, req);
+    return sendJson(res, 200, { ok: true, role: 'styret', scope: 'admin' });
+  } catch (error) {
+    console.error('styret-elevated-login error', error);
+    return serverError(res);
+  }
+};

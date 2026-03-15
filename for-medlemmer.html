@@ -11,6 +11,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
+    <script src="for-medlemmer.js" defer></script>
   </head>
   <body>
     <header class="site-header">
@@ -47,13 +48,89 @@
     </nav>
 
     <main class="content members-content">
-      <section class="welcome-grid" aria-label="For medlemmer">
-        <article class="welcome-card members-card">
-          <h3>For medlemmer</h3>
-          <p>Denne undersiden er klar. Passordbeskyttelse settes opp i neste steg.</p>
-          <a class="feed-all-link" href="index.html">Tilbake til hovedside</a>
+      <section id="auth-gateway" class="auth-grid" aria-label="Innlogging">
+        <article class="welcome-card auth-card">
+          <h3>Logg inn som medlem</h3>
+          <form id="member-login-form" class="auth-form" autocomplete="off" novalidate>
+            <label for="member-phone">Telefonnummer</label>
+            <input
+              id="member-phone"
+              name="member_phone_code"
+              type="text"
+              inputmode="tel"
+              autocomplete="off"
+              spellcheck="false"
+              required
+            />
+
+            <label for="member-employee">Ansattnummer</label>
+            <input
+              id="member-employee"
+              name="member_employee_code"
+              type="text"
+              autocomplete="off"
+              spellcheck="false"
+              required
+            />
+
+            <button type="submit" class="action-btn">Logg inn medlem</button>
+          </form>
+        </article>
+
+        <article class="welcome-card auth-card">
+          <h3>Logg inn som styret</h3>
+          <form id="styret-login-form" class="auth-form" autocomplete="off" novalidate>
+            <label for="styret-user">Brukernavn</label>
+            <input
+              id="styret-user"
+              name="board_user_code"
+              type="text"
+              autocomplete="off"
+              spellcheck="false"
+              required
+            />
+
+            <label for="styret-pass">Passord</label>
+            <input
+              id="styret-pass"
+              name="board_pass_code"
+              type="password"
+              autocomplete="new-password"
+              spellcheck="false"
+              required
+            />
+
+            <button type="submit" class="action-btn">Logg inn styret</button>
+          </form>
         </article>
       </section>
+
+      <section id="member-app" class="member-app" hidden>
+        <article class="welcome-card wall-card">
+          <h3>Veggen</h3>
+          <p class="member-user" id="member-user-label"></p>
+
+          <form id="wall-form" class="wall-form" autocomplete="off" novalidate>
+            <label for="wall-title">Tittel</label>
+            <input id="wall-title" type="text" maxlength="120" required />
+
+            <label for="wall-message">Melding</label>
+            <textarea id="wall-message" rows="4" maxlength="4000" required></textarea>
+
+            <button type="submit" class="action-btn">Publiser på veggen</button>
+          </form>
+
+          <ul id="wall-list" class="wall-list">
+            <li class="feed-status">Laster veggen...</li>
+          </ul>
+
+          <button id="logout-button" type="button" class="secondary-btn">Logg ut</button>
+        </article>
+      </section>
+
+      <p id="auth-status" class="status-msg" role="status" aria-live="polite"></p>
     </main>
+
+    <a id="admin-fab" class="admin-fab" href="styret-login.html" hidden>#</a>
   </body>
 </html>

@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="no">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Styret innstillinger - CG Klubben</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="styret-innstillinger.js" defer></script>
+  </head>
+  <body>
+    <main class="content admin-content">
+      <section class="welcome-grid admin-grid" aria-label="Styret innstillinger">
+        <article class="welcome-card admin-card">
+          <h3>Innstillinger</h3>
+          <form id="settings-form" class="auth-form" autocomplete="off" novalidate>
+            <label for="setting-headline">Tekst</label>
+            <input id="setting-headline" type="text" maxlength="300" />
+
+            <label class="check-row" for="setting-published">
+              <input id="setting-published" type="checkbox" />
+              Publisert
+            </label>
+
+            <label for="setting-details">Detaljer (notat)</label>
+            <textarea id="setting-details" rows="4"></textarea>
+
+            <button type="submit" class="action-btn">Lagre innstillinger</button>
+          </form>
+        </article>
+
+        <article class="welcome-card admin-card admin-card-wide">
+          <h3>Medlemsliste</h3>
+          <form id="member-create-form" class="auth-form" autocomplete="off" novalidate>
+            <label for="member-name">Navn</label>
+            <input id="member-name" type="text" required />
+
+            <label for="member-email">Epost</label>
+            <input id="member-email" type="email" required />
+
+            <label for="member-phone-admin">Telefonnummer</label>
+            <input id="member-phone-admin" type="text" inputmode="tel" required />
+
+            <label for="member-employee-admin">Ansattnummer</label>
+            <input id="member-employee-admin" type="text" required />
+
+            <button type="submit" class="action-btn">Legg til medlem</button>
+          </form>
+
+          <div class="member-table-wrap">
+            <table class="member-table">
+              <thead>
+                <tr>
+                  <th>Navn</th>
+                  <th>Epost</th>
+                  <th>Telefonnummer</th>
+                  <th>Ansattnummer</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody id="member-table-body">
+                <tr>
+                  <td colspan="5">Laster medlemmer...</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="admin-actions">
+            <button id="logout-all" type="button" class="secondary-btn">Logg ut</button>
+            <a class="feed-all-link" href="for-medlemmer.html">Til For medlemmer</a>
+          </div>
+        </article>
+      </section>
+
+      <p id="admin-status" class="status-msg" role="status" aria-live="polite"></p>
+    </main>
+  </body>
+</html>
