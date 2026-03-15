@@ -52,23 +52,22 @@
         <article class="welcome-card auth-card">
           <h3>Logg inn som medlem</h3>
           <form id="member-login-form" class="auth-form" autocomplete="off" novalidate>
-            <label for="member-phone">Telefonnummer</label>
+            <label for="member-username">Brukernavn</label>
             <input
-              id="member-phone"
-              name="member_phone_code"
+              id="member-username"
+              name="member_username_code"
               type="text"
-              inputmode="tel"
               autocomplete="off"
               spellcheck="false"
               required
             />
 
-            <label for="member-employee">Ansattnummer</label>
+            <label for="member-password">Passord</label>
             <input
-              id="member-employee"
-              name="member_employee_code"
-              type="text"
-              autocomplete="off"
+              id="member-password"
+              name="member_password_code"
+              type="password"
+              autocomplete="new-password"
               spellcheck="false"
               required
             />

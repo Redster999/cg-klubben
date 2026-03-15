@@ -21,11 +21,13 @@ module.exports = async function handler(req, res) {
 
   try {
     const body = await parseJsonBody(req);
-    const phone = normalizePhone(body.phone);
-    const employeeNumber = normalizeEmployeeNumber(body.employeeNumber);
+    const username = typeof body.username === 'string' ? body.username : body.phone;
+    const password = typeof body.password === 'string' ? body.password : body.employeeNumber;
+    const phone = normalizePhone(username);
+    const employeeNumber = normalizeEmployeeNumber(password);
 
     if (!phone || !employeeNumber) {
-      return badRequest(res, 'Telefonnummer og ansattnummer er påkrevd');
+      return badRequest(res, 'Brukernavn og passord er påkrevd');
     }
 
     const result = await query(
@@ -38,7 +40,7 @@ module.exports = async function handler(req, res) {
 
     const member = result.rows[0];
     if (!member) {
-      return unauthorized(res, 'Ugyldig medlemsinnlogging');
+      return unauthorized(res, 'Ugyldig innlogging');
     }
 
     setSession(res, req, { role: 'member', memberId: member.id, name: member.name });

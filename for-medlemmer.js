@@ -116,21 +116,21 @@ async function refreshUserAndData() {
 
 async function handleMemberLogin(event) {
   event.preventDefault();
-  const phoneInput = document.getElementById('member-phone');
-  const employeeInput = document.getElementById('member-employee');
+  const usernameInput = document.getElementById('member-username');
+  const passwordInput = document.getElementById('member-password');
 
   try {
     setStatus('Logger inn medlem...');
     await apiFetch('/api/auth/member-login', {
       method: 'POST',
       body: JSON.stringify({
-        phone: phoneInput.value,
-        employeeNumber: employeeInput.value,
+        username: usernameInput.value,
+        password: passwordInput.value,
       }),
     });
 
-    phoneInput.value = '';
-    employeeInput.value = '';
+    usernameInput.value = '';
+    passwordInput.value = '';
     setStatus('Innlogging vellykket.');
     await refreshUserAndData();
   } catch (error) {
