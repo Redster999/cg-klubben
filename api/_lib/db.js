@@ -54,6 +54,8 @@ async function ensureSchema() {
         author_name TEXT NOT NULL,
         author_role TEXT NOT NULL CHECK (author_role IN ('styret', 'member')),
         show_on_frontpage BOOLEAN NOT NULL DEFAULT FALSE,
+        is_deleted BOOLEAN NOT NULL DEFAULT FALSE,
+        deleted_at TIMESTAMPTZ,
         created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
       );
     `);
@@ -61,6 +63,16 @@ async function ensureSchema() {
     await client.query(`
       ALTER TABLE wall_posts
       ADD COLUMN IF NOT EXISTS show_on_frontpage BOOLEAN NOT NULL DEFAULT FALSE;
+    `);
+
+    await client.query(`
+      ALTER TABLE wall_posts
+      ADD COLUMN IF NOT EXISTS is_deleted BOOLEAN NOT NULL DEFAULT FALSE;
+    `);
+
+    await client.query(`
+      ALTER TABLE wall_posts
+      ADD COLUMN IF NOT EXISTS deleted_at TIMESTAMPTZ;
     `);
 
     await client.query(`

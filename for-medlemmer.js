@@ -53,12 +53,19 @@ async function updateWallFrontpage(id, enabled) {
   });
 }
 
+async function deleteWallPost(id) {
+  await apiFetch(`/api/wall/posts?id=${id}`, {
+    method: 'DELETE',
+    body: JSON.stringify({}),
+  });
+}
+
 function wallItemTemplate(item) {
   const li = document.createElement('li');
   li.className = 'wall-item';
 
   const title = document.createElement('h4');
-  title.textContent = item.title;
+  title.textContent = item.isDeleted ? 'Slettet av styret.' : item.title;
 
   const body = document.createElement('p');
   body.textContent = item.body;
@@ -69,10 +76,15 @@ function wallItemTemplate(item) {
   meta.textContent = `${authorLabel} - ${formatTimestamp(item.createdAt)}`;
 
   li.appendChild(title);
-  li.appendChild(body);
-  li.appendChild(meta);
+  if (!item.isDeleted) {
+    li.appendChild(body);
+    li.appendChild(meta);
+  }
 
-  if (currentUser && currentUser.role === 'styret') {
+  if (currentUser && currentUser.role === 'styret' && !item.isDeleted) {
+    const actionsRow = document.createElement('div');
+    actionsRow.className = 'wall-item-actions';
+
     const toggleRow = document.createElement('label');
     toggleRow.className = 'wall-frontpage-toggle';
 
@@ -95,7 +107,28 @@ function wallItemTemplate(item) {
 
     toggleRow.appendChild(toggle);
     toggleRow.appendChild(text);
-    li.appendChild(toggleRow);
+    actionsRow.appendChild(toggleRow);
+
+    const deleteButton = document.createElement('button');
+    deleteButton.type = 'button';
+    deleteButton.className = 'delete-btn';
+    deleteButton.textContent = 'Slett';
+    deleteButton.addEventListener('click', async () => {
+      if (!window.confirm('Slette dette innlegget?')) {
+        return;
+      }
+
+      try {
+        await deleteWallPost(item.id);
+        setStatus('Innlegg slettet.');
+        await loadWall();
+      } catch (error) {
+        setStatus(error.message, true);
+      }
+    });
+
+    actionsRow.appendChild(deleteButton);
+    li.appendChild(actionsRow);
   }
 
   return li;

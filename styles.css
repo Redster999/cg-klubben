@@ -353,6 +353,13 @@ body {
   margin-top: 10px;
 }
 
+.wall-item-actions {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+}
+
 .member-user {
   color: var(--muted);
   font-family: "Libre Franklin", Arial, sans-serif;
