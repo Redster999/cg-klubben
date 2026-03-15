@@ -1,6 +1,6 @@
 const { badRequest, forbidden, isSameOrigin, methodNotAllowed, parseJsonBody, sendJson, serverError, unauthorized } = require('../_lib/http');
 const { query } = require('../_lib/db');
-const { boardCredentials, safeEqual, setSession } = require('../_lib/session');
+const { boardCredentials, safeEqual, setAdminSession, setSession } = require('../_lib/session');
 
 function normalizePhone(phone) {
   return String(phone || '').replace(/[^0-9]/g, '');
@@ -45,6 +45,7 @@ module.exports = async function handler(req, res) {
       const member = memberResult.rows[0];
       if (member) {
         setSession(res, req, { role: 'styret', memberId: member.id, name: member.name });
+        setAdminSession(res, req);
         return sendJson(res, 200, { ok: true, role: 'styret', source: 'member' });
       }
     }
@@ -56,6 +57,7 @@ module.exports = async function handler(req, res) {
     }
 
     setSession(res, req, { role: 'styret', name: 'Styret' });
+    setAdminSession(res, req);
     return sendJson(res, 200, { ok: true, role: 'styret', source: 'env' });
   } catch (error) {
     console.error('styret-login error', error);

@@ -420,6 +420,15 @@ body {
   width: 16px;
 }
 
+.member-inline-input {
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  font-family: "Libre Franklin", Arial, sans-serif;
+  font-size: 14px;
+  padding: 6px 8px;
+  width: 100%;
+}
+
 .member-action-cell {
   display: flex;
   gap: 8px;

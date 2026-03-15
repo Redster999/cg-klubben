@@ -158,16 +158,36 @@ function memberRowTemplate(member) {
   const tr = document.createElement('tr');
 
   const nameCell = document.createElement('td');
-  nameCell.textContent = member.name;
+  const nameInput = document.createElement('input');
+  nameInput.type = 'text';
+  nameInput.className = 'member-inline-input';
+  nameInput.value = member.name || '';
+  nameInput.setAttribute('aria-label', `Navn for ${member.name}`);
+  nameCell.appendChild(nameInput);
 
   const emailCell = document.createElement('td');
-  emailCell.textContent = member.email;
+  const emailInput = document.createElement('input');
+  emailInput.type = 'email';
+  emailInput.className = 'member-inline-input';
+  emailInput.value = member.email || '';
+  emailInput.setAttribute('aria-label', `Epost for ${member.name}`);
+  emailCell.appendChild(emailInput);
 
   const phoneCell = document.createElement('td');
-  phoneCell.textContent = member.phone;
+  const phoneInput = document.createElement('input');
+  phoneInput.type = 'text';
+  phoneInput.className = 'member-inline-input';
+  phoneInput.value = member.phone || '';
+  phoneInput.setAttribute('aria-label', `Telefonnummer for ${member.name}`);
+  phoneCell.appendChild(phoneInput);
 
   const employeeCell = document.createElement('td');
-  employeeCell.textContent = member.employeeNumber;
+  const employeeInput = document.createElement('input');
+  employeeInput.type = 'text';
+  employeeInput.className = 'member-inline-input';
+  employeeInput.value = member.employeeNumber || '';
+  employeeInput.setAttribute('aria-label', `Ansattnummer for ${member.name}`);
+  employeeCell.appendChild(employeeInput);
 
   const boardCell = document.createElement('td');
   const boardCheckbox = document.createElement('input');
@@ -186,10 +206,16 @@ function memberRowTemplate(member) {
     try {
       await apiFetch(`/api/admin/members?id=${member.id}`, {
         method: 'PATCH',
-        body: JSON.stringify({ isBoard: boardCheckbox.checked }),
+        body: JSON.stringify({
+          name: nameInput.value,
+          email: emailInput.value,
+          phone: phoneInput.value,
+          employeeNumber: employeeInput.value,
+          isBoard: boardCheckbox.checked,
+        }),
       });
 
-      setStatus(`Styrerolle oppdatert for ${member.name}.`);
+      setStatus(`Medlem oppdatert: ${nameInput.value || member.name}.`);
       await loadMembers();
     } catch (error) {
       setStatus(error.message, true);
