@@ -2,7 +2,7 @@ const NEWS_LIST_ID = "aktuelt-list";
 const COURSES_LIST_ID = "kurs-list";
 const NEWS_JSON_PATH = "data/news.json";
 const COURSES_JSON_PATH = "data/events.json";
-const MAX_NEWS_ITEMS = 6;
+const MAX_NEWS_ITEMS = 10;
 const MAX_COURSE_ITEMS = 6;
 
 function createStatusItem(message) {
@@ -73,11 +73,17 @@ function renderNews(listElement, payload) {
   }
 
   const rendered = items.map((item) => {
-    const published = formatNewsDate(item.published);
+    const published = item.published
+      ? formatNewsDate(item.published)
+      : item.publishedAt
+        ? formatEventDate(item.publishedAt)
+        : "";
+    const source = item.sourceName ? `${item.sourceName} - ` : "";
+
     return createFeedItem({
       title: item.title,
       url: item.url,
-      meta: published ? `Publisert ${published}` : "Publisert nylig",
+      meta: published ? `${source}Publisert ${published}` : `${source}Publisert nylig`,
     });
   });
 

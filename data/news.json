@@ -1,127 +1,1096 @@
 {
-  "generatedAt": "2026-03-15T14:32:22.863428+00:00",
-  "source": "https://www.fellesforbundet.no/aktuelt/nyheter/",
-  "totalHits": 1367,
+  "generatedAt": "2026-03-15T15:14:57.388633+00:00",
+  "sources": [
+    {
+      "name": "Fellesforbundet",
+      "url": "https://www.fellesforbundet.no/aktuelt/nyheter/"
+    },
+    {
+      "name": "FriFagbevegelse",
+      "url": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
+    }
+  ],
+  "totalHits": 120,
   "items": [
+    {
+      "title": "Kommunen snur etter kritikk: F\u00e5r bruke torget p\u00e5 1. mai",
+      "url": "https://frifagbevegelse.no/magasinet-for-fagorganiserte/kommunen-snur-etter-kritikk-far-bruke-torget-pa-1-mai-6.158.1199232.9ddfeb5dab",
+      "published": "15.03.2026",
+      "publishedAt": "2026-03-15T00:00:00+00:00",
+      "summary": "I fjor ble de nekta, men n\u00e5 f\u00e5r fagbevegelsen likevel bruke torget i Brumunddal p\u00e5 sin kampdag.",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
+    },
+    {
+      "title": "Fra \u00abmenighetsblad\u00bb til medlemsblad: Magasinet for fagorganiserte fyller 40",
+      "url": "https://frifagbevegelse.no/magasinet-for-fagorganiserte/fra-menighetsblad-til-medlemsblad-magasinet-for-fagorganiserte-fyller-40-6.469.1190990.9b692f56eb",
+      "published": "15.03.2026",
+      "publishedAt": "2026-03-15T00:00:00+00:00",
+      "summary": "For 40 \u00e5r siden ville Hallgeir Westrum starte et medlemsblad som ikke var en del av kommunikasjonsapparetet til LO. Resultatet ble Magasinet for fagorganiserte, medlemsbladet i LOs st\u00f8rste forbund.",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
+    },
+    {
+      "title": "Lina fjerner mugg, sopp og kloakk",
+      "url": "https://frifagbevegelse.no/arbeidsmanden/lina-fjerner-mugg-sopp-og-kloakk-6.469.1196255.0313e212d5",
+      "published": "15.03.2026",
+      "publishedAt": "2026-03-15T00:00:00+00:00",
+      "summary": "N\u00e5r ulykken er ute, rykker Lina Lund inn i folks hjem.",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
+    },
+    {
+      "title": "Mette Frederiksen fjernet en fridag. N\u00e5 kan danskene f\u00e5 den tilbake",
+      "url": "https://frifagbevegelse.no/loaktuelt/mette-frederiksen-fjernet-en-fridag-na-kan-danskene-fa-den-tilbake-6.158.1198435.cfd50b8c6d",
+      "published": "14.03.2026",
+      "publishedAt": "2026-03-14T00:00:00+00:00",
+      "summary": "Til store protester ble helligdagen fjernet av den danske regjeringen. N\u00e5 kan det bli flertall for \u00e5 gjeninnf\u00f8re den.",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
+    },
+    {
+      "title": "Marius er tilbake 15 \u00e5r etter bomben: \u2013 Veldig spesielt",
+      "url": "https://frifagbevegelse.no/ntlmagasinet/marius-er-tilbake-15-ar-etter-bomben--veldig-spesielt-6.158.1196118.9a16e39947",
+      "published": "14.03.2026",
+      "publishedAt": "2026-03-14T00:00:00+00:00",
+      "summary": "22. juli 2011 var Marius Ringsrud p\u00e5 jobb i Regjeringskvartalet da bomben sprengte. Snart er han tilbake i nye kontorlokaler: \u2013 Veldig spesielt.",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
+    },
+    {
+      "title": "Espen levde av \u00e5 spille fotball. Han tok et smart valg p\u00e5 si",
+      "url": "https://frifagbevegelse.no/fontene/espen-levde-av-a-spille-fotball-han-tok-et-smart-valg-pa-si-6.469.1199450.0cd17bb591",
+      "published": "14.03.2026",
+      "publishedAt": "2026-03-14T00:00:00+00:00",
+      "summary": "Espen B\u00f8rufsen fikk oppfylt guttedr\u00f8mmen og fikk 320 kamper for favorittklubben Start. N\u00e5 bruker han fotballen til noe mer.",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
+    },
+    {
+      "title": "Her l\u00e6rer kronprinsen \u00e5 reparere mobil",
+      "url": "https://frifagbevegelse.no/nettverk/her-larer-kronprinsen-a-reparere-mobil-6.158.1198758.8e5e3e038f",
+      "published": "14.03.2026",
+      "publishedAt": "2026-03-14T00:00:00+00:00",
+      "summary": "Millioner av kasserte mobiler kunne v\u00e6rt reparert eller resirkulert. Janicke Oterjernet l\u00e6rte kronprins Haakon \u00e5 bytte skjerm.",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
+    },
     {
       "title": "Tillitsvalgte i bilbransjen",
       "url": "https://www.fellesforbundet.no/aktuelt/nyheter/2026/tillitsvalgte-i-bilbransjen/",
       "published": "13.03.2026",
-      "summary": "20 tillitsvalgte i bilbransjen i Stavanger-regionen m\u00f8ttes for \u00e5 forberede seg til l\u00f8nnsoppgj\u00f8ret. "
+      "publishedAt": "2026-03-13T00:00:00+00:00",
+      "summary": "20 tillitsvalgte i bilbransjen i Stavanger-regionen m\u00f8ttes for \u00e5 forberede seg til l\u00f8nnsoppgj\u00f8ret. ",
+      "sourceName": "Fellesforbundet",
+      "sourceUrl": "https://www.fellesforbundet.no/aktuelt/nyheter/"
+    },
+    {
+      "title": "Han skal snakke for de ansatte i Nav-gjennomgang",
+      "url": "https://frifagbevegelse.no/ntlmagasinet/han-skal-snakke-for-de-ansatte-i-navgjennomgang-6.158.1199535.c585125894",
+      "published": "13.03.2026",
+      "publishedAt": "2026-03-13T00:00:00+00:00",
+      "summary": "Torgeir Homme, leder av Norsk Tjenestemannslag i Nav, er valgt som de ansattes representant i ekspertutvalget som skal vurdere organiseringen av Nav.",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
+    },
+    {
+      "title": "Ansatte frykter ekstrapensjonen kan ryke: \u2013 Skaper utrygghet",
+      "url": "https://frifagbevegelse.no/loaktuelt/ansatte-frykter-ekstrapensjonen-kan-ryke--skaper-utrygghet-6.158.1199213.97851e62e5",
+      "published": "13.03.2026",
+      "publishedAt": "2026-03-13T00:00:00+00:00",
+      "summary": "Sykehjem og omsorgsboliger kan bli satt ut p\u00e5 anbud i Nordre Follo kommune. \u2013 Skaper utrygghet, sier tillitsvalgt i Fagforbundet.",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
+    },
+    {
+      "title": "Nytt styre i NTL Ung",
+      "url": "https://frifagbevegelse.no/ntlmagasinet/nytt-styre-i-ntl-ung-6.158.1199475.d15d3d274c",
+      "published": "13.03.2026",
+      "publishedAt": "2026-03-13T00:00:00+00:00",
+      "summary": "Torsdag ble John Magne Pedersen Tangen gjenvalgt som leder av Norsk Tjenestemanns ungdomsforening (NTL Ung).",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
+    },
+    {
+      "title": "Krigen i Midt\u00f8sten: Slik p\u00e5virkes l\u00f8nna",
+      "url": "https://frifagbevegelse.no/loaktuelt/krigen-i-midtosten-slik-pavirkes-lonna-6.158.1198751.48a93c5765",
+      "published": "13.03.2026",
+      "publishedAt": "2026-03-13T00:00:00+00:00",
+      "summary": "Krigen i Midt\u00f8sten har f\u00f8rt til \u00f8kte energipriser og valutakurser, noe som p\u00e5virker prisveksten. LO krever reall\u00f8nnsvekst for sine medlemmer, med m\u00e5l om \u00e5 \u00f8ke kj\u00f8pekraften. Sjef\u00f8konom Roger Bj\u00f8rnstad mener det er rom for et betydelig l\u00f8nnsl\u00f8ft.",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
+    },
+    {
+      "title": "Britt sikret sykepenger til kollegene. N\u00e5 f\u00e5r hun pris",
+      "url": "https://frifagbevegelse.no/hknytt/britt-sikret-sykepenger-til-kollegene-na-far-hun-pris-6.158.1199284.d42b74969e",
+      "published": "13.03.2026",
+      "publishedAt": "2026-03-13T00:00:00+00:00",
+      "summary": "F\u00e5r pris for \u00e5 ha fikset forskuttering til alle ansatte i kleskjeden Kappahl. N\u00e5 krever LO det samme for alle.",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
+    },
+    {
+      "title": "Sj\u00f8folk p\u00e5 norske skip f\u00e5r ekstra betalt om de m\u00e5 seile i krigssonen",
+      "url": "https://frifagbevegelse.no/nyheter/sjofolk-pa-norske-skip-far-ekstra-betalt-om-de-ma-seile-i-krigssonen-6.158.1199260.66c6e19397",
+      "published": "13.03.2026",
+      "publishedAt": "2026-03-13T00:00:00+00:00",
+      "summary": "Norske myndigheter forbyr n\u00e5 skip \u00e5 seile inn i Hormuzstredet grunnet \u00f8kt risiko. En ny avtale gir norske sj\u00f8folk ekstra betaling og beskyttelse dersom de m\u00e5 jobbe i krigssoner n\u00e6r Iran.",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
+    },
+    {
+      "title": "Russisk kaptein i Sverige mistenkt for flere lovbrudd",
+      "url": "https://frifagbevegelse.no/nyheter/russisk-kaptein-i-sverige-mistenkt-for-flere-lovbrudd-6.158.1199498.47ec3260d7",
+      "published": "13.03.2026",
+      "publishedAt": "2026-03-13T00:00:00+00:00",
+      "summary": "Tankskipet Sea Owl I ble torsdag bordet av svensk politi og kystvakt utenfor Trelleborg.",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
+    },
+    {
+      "title": "Varsler sak mot Nav etter at Florin ble skadet p\u00e5 jobb",
+      "url": "https://frifagbevegelse.no/nettverk/varsler-sak-mot-nav-etter-at-florin-ble-skadet-pa-jobb-6.158.1198984.30a71d40d7",
+      "published": "13.03.2026",
+      "publishedAt": "2026-03-13T00:00:00+00:00",
+      "summary": "Elektriker Florin Sauluc ble alvorlig skadet p\u00e5 jobb i Norge, men m\u00f8tte store utfordringer med Nav og manglende st\u00f8tte. EL og IT Forbundet varsler s\u00f8ksm\u00e5l mot Nav for diskriminering..",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
+    },
+    {
+      "title": "Sykel\u00f8nnsdom blir anket til H\u00f8yesterett",
+      "url": "https://frifagbevegelse.no/nyheter/sykelonnsdom-blir-anket-til-hoyesterett-6.158.1199433.02210aebc6",
+      "published": "13.03.2026",
+      "publishedAt": "2026-03-13T00:00:00+00:00",
+      "summary": "Maria Ekdahl og fem andre sj\u00f8folk har saks\u00f8kt Hurtigruten, Havila Kystruten og Color Line for \u00e5 ikke betale sykel\u00f8nn utover 16 dager.",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
+    },
+    {
+      "title": "Marie Blokhus spiller p\u00e5 lag med folk fra rusmilj\u00f8et i ny film",
+      "url": "https://frifagbevegelse.no/fontene/marie-blokhus-spiller-pa-lag-med-folk-fra-rusmiljoet-i-ny-film-6.469.1199017.7bc8ce04d6",
+      "published": "13.03.2026",
+      "publishedAt": "2026-03-13T00:00:00+00:00",
+      "summary": "Regiss\u00f8ren ville vise menneskene bak rusmilj\u00f8et i Oslo. Det ble til filmen \u00abAgnes mot verden\u00bb.",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
+    },
+    {
+      "title": "Elin (24) er nyutdannet, men f\u00e5r ikke jobb",
+      "url": "https://frifagbevegelse.no/loaktuelt/elin-24-er-nyutdannet-men-far-ikke-jobb-6.469.1196117.bb8fc7a7c8",
+      "published": "13.03.2026",
+      "publishedAt": "2026-03-13T00:00:00+00:00",
+      "summary": "Ledigheten blant unge er den h\u00f8yeste p\u00e5 20 \u00e5r. Sosionom Elin Thommessen m\u00e5 bo hjemme p\u00e5 pikerommet fordi hun ikke f\u00e5r seg jobb.",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
+    },
+    {
+      "title": "Her fikser de tog \u2013 langt unna n\u00e6rmeste togskinne",
+      "url": "https://frifagbevegelse.no/njfmagasinet/her-fikser-de-tog--langt-unna-narmeste-togskinne-6.469.1196279.0c9ab02f0b",
+      "published": "13.03.2026",
+      "publishedAt": "2026-03-13T00:00:00+00:00",
+      "summary": "Det ble for dyrt med lokaler ved siden av jernbanen. Verkstedet er likevel en suksess.",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
+    },
+    {
+      "title": "L\u00e6rere kan f\u00e5 kortere friperioder",
+      "url": "https://frifagbevegelse.no/i-skolen/larere-kan-fa-kortere-friperioder-6.158.1197693.190673bf32",
+      "published": "13.03.2026",
+      "publishedAt": "2026-03-13T00:00:00+00:00",
+      "summary": "Retten til \u00e5 fullf\u00f8re videreg\u00e5ende skole kan f\u00f8re til at l\u00e6rerne m\u00e5 jobbe flere uker enn de gj\u00f8r i dag.",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
     },
     {
       "title": "Strategi for den vareproduserende industrien lansert",
       "url": "https://www.fellesforbundet.no/aktuelt/nyheter/2026/strategi-for-vareproduserende-industri/",
       "published": "12.03.2026",
-      "summary": "Fellesforbundet, Norsk Industri og Styrke har p\u00e5 oppdrag fra regjeringen utarbeidet en strategi for \u00e5 styrke den vareproduserende industrien. Onsdag denne uken ble strategien overrakt n\u00e6ringsminister Cecilie Myrseth."
+      "publishedAt": "2026-03-12T00:00:00+00:00",
+      "summary": "Fellesforbundet, Norsk Industri og Styrke har p\u00e5 oppdrag fra regjeringen utarbeidet en strategi for \u00e5 styrke den vareproduserende industrien. Onsdag denne uken ble strategien overrakt n\u00e6ringsminister Cecilie Myrseth.",
+      "sourceName": "Fellesforbundet",
+      "sourceUrl": "https://www.fellesforbundet.no/aktuelt/nyheter/"
     },
     {
       "title": "Fellesforbundet sier nei til d\u00f8gn\u00e5pen alkoholservering under fotball-VM",
       "url": "https://www.fellesforbundet.no/aktuelt/nyheter/2026/fellesforbundet-sier-nei-til-dognapen-alkoholservering-under-fotball-vm/",
       "published": "12.03.2026",
-      "summary": "Regjeringens forslag om \u00e5 \u00e5pne for alkoholservering gjennom hele natta under fotball-VM m\u00f8ter sterk motstand fra Fellesforbundet\u00a0som organiserer de ansatte i serveringsbransjen."
+      "publishedAt": "2026-03-12T00:00:00+00:00",
+      "summary": "Regjeringens forslag om \u00e5 \u00e5pne for alkoholservering gjennom hele natta under fotball-VM m\u00f8ter sterk motstand fra Fellesforbundet\u00a0som organiserer de ansatte i serveringsbransjen.",
+      "sourceName": "Fellesforbundet",
+      "sourceUrl": "https://www.fellesforbundet.no/aktuelt/nyheter/"
+    },
+    {
+      "title": "Mekanikere har aksjonert i ni uker. N\u00e5 f\u00e5r de st\u00f8tte",
+      "url": "https://frifagbevegelse.no/magasinet-for-fagorganiserte/mekanikere-har-aksjonert-i-ni-uker-na-far-de-stotte-6.158.1199159.02ac97d281",
+      "published": "12.03.2026",
+      "publishedAt": "2026-03-12T00:00:00+00:00",
+      "summary": "Mekanikere ved MAN Truck & Bus i Trondheim har aksjonert for h\u00f8yere l\u00f8nn i ni uker. N\u00e5 f\u00e5r de \u00f8konomisk st\u00f8tte fra flere fagforeninger.",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
+    },
+    {
+      "title": "Skal frakte tanks og tunge v\u00e5pen for forsvaret",
+      "url": "https://frifagbevegelse.no/njfmagasinet/skal-frakte-tanks-og-tunge-vapen-for-forsvaret-6.158.1199052.0ac6a86fa7",
+      "published": "12.03.2026",
+      "publishedAt": "2026-03-12T00:00:00+00:00",
+      "summary": "De neste \u00e5rene g\u00e5r Forsvarets materiell p\u00e5 skinner. CargoNet og Forsvaret har blitt enige om en fire \u00e5r lang avtale om frakting av gods og materiell.",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
+    },
+    {
+      "title": "LO krever ny AFP neste \u00e5r, men kan ikke streike",
+      "url": "https://frifagbevegelse.no/loaktuelt/lo-krever-ny-afp-neste-ar-men-kan-ikke-streike-6.158.1197921.08fee381be",
+      "published": "12.03.2026",
+      "publishedAt": "2026-03-12T00:00:00+00:00",
+      "summary": "LO vil ha endringer i avtalefesta pensjon (AFP) i neste \u00e5rs l\u00f8nnsoppgj\u00f8r, men kan ikke streike for det.",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
+    },
+    {
+      "title": "Kommuneansatt m\u00e5tte pante flasker for \u00e5 komme seg p\u00e5 jobb",
+      "url": "https://frifagbevegelse.no/fagbladet/kommuneansatt-matte-pante-flasker-for-a-komme-seg-pa-jobb-6.158.1198993.76a99bf935",
+      "published": "12.03.2026",
+      "publishedAt": "2026-03-12T00:00:00+00:00",
+      "summary": "Flere kommuneansatte i Kristiansand sliter fordi de ikke har f\u00e5tt den l\u00f8nna de skulle.",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
+    },
+    {
+      "title": "Stadig flere forvaringsd\u00f8mte i norske fengsler",
+      "url": "https://frifagbevegelse.no/nyheter/stadig-flere-forvaringsdomte-i-norske-fengsler-6.158.1199177.693d162ece",
+      "published": "12.03.2026",
+      "publishedAt": "2026-03-12T00:00:00+00:00",
+      "summary": "21 prosent flere soner den strengeste straffen vi har sammenlignet med i fjor.",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
+    },
+    {
+      "title": "LO sier nei til regjeringens nye krav til sykemeldte",
+      "url": "https://frifagbevegelse.no/loaktuelt/lo-sier-nei-til-regjeringens-nye-krav-til-sykemeldte-6.158.1198792.e63f321e07",
+      "published": "12.03.2026",
+      "publishedAt": "2026-03-12T00:00:00+00:00",
+      "summary": "Regjeringen foresl\u00e5r at sykemeldte skal ha plikt til \u00e5 ta andre arbeidsoppgaver enn det som st\u00e5r i arbeidskontrakten. LO mener dette svekker stillingsvernet og bryter med grunnleggende arbeidsrettslige prinsipper.",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
+    },
+    {
+      "title": "Kraftig regn, vind og flom f\u00f8rte til mer overtid",
+      "url": "https://frifagbevegelse.no/nyheter/kraftig-regn-vind-og-flom-forte-til-mer-overtid-6.158.1198784.3f7b6305f6",
+      "published": "12.03.2026",
+      "publishedAt": "2026-03-12T00:00:00+00:00",
+      "summary": "Fire av ti jobba mer overtid p\u00e5 grunn av ekstremv\u00e6r, viser ny unders\u00f8kelse",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
+    },
+    {
+      "title": "Unikt Nav-tilbud hjalp uf\u00f8re Karoline (30) tilbake i jobb",
+      "url": "https://frifagbevegelse.no/ntlmagasinet/unikt-navtilbud-hjalp-ufore-karoline-30-tilbake-i-jobb-6.469.1198445.486acd4c72",
+      "published": "12.03.2026",
+      "publishedAt": "2026-03-12T00:00:00+00:00",
+      "summary": "Prosjektet #syktbrajobb i Bergen har hjulpet over hundre unge uf\u00f8re videre til arbeid eller utdanning.",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
+    },
+    {
+      "title": "Amerikanske studenter imponert over norsk tillitskultur: \u2013 Er dette virkelig?",
+      "url": "https://frifagbevegelse.no/nffmagasinet/amerikanske-studenter-imponert-over-norsk-tillitskultur--er-dette-virkelig-6.158.1197261.fa0a5f0559",
+      "published": "12.03.2026",
+      "publishedAt": "2026-03-12T00:00:00+00:00",
+      "summary": "Tilliten mellom ansatte og innsatte i norske fengsler f\u00e5r studenter fra University of Virginia til \u00e5 m\u00e5pe.",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
     },
     {
       "title": "Fellesforbundet anker Wolt-saken til H\u00f8yesterett",
       "url": "https://www.fellesforbundet.no/aktuelt/nyheter/2026/fellesforbundet-anker-wolt-saken-til-hoyesterett/",
       "published": "11.03.2026",
-      "summary": "Lagmannsretten avviste i vinter at Wolt-budene organisert i Fellesforbundet er \u00e5 anse som arbeidstakere. N\u00e5 anker Fellesforbundet saken til H\u00f8yesterett."
+      "publishedAt": "2026-03-11T00:00:00+00:00",
+      "summary": "Lagmannsretten avviste i vinter at Wolt-budene organisert i Fellesforbundet er \u00e5 anse som arbeidstakere. N\u00e5 anker Fellesforbundet saken til H\u00f8yesterett.",
+      "sourceName": "Fellesforbundet",
+      "sourceUrl": "https://www.fellesforbundet.no/aktuelt/nyheter/"
+    },
+    {
+      "title": "Henny-Kristin er ny leder i NTL Veg",
+      "url": "https://frifagbevegelse.no/ntlmagasinet/hennykristin-er-ny-leder-i-ntl-veg-6.158.1199009.4c598997b3",
+      "published": "11.03.2026",
+      "publishedAt": "2026-03-11T00:00:00+00:00",
+      "summary": "Nyvalgt leder Henny-Kristin Asperanden Navarsete vil sikre gode k\u00e5r for 1300 medlemmer i NTLs forening i Statens vegvesen.",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
+    },
+    {
+      "title": "DNB-sjefen \u00f8ker l\u00f8nna",
+      "url": "https://frifagbevegelse.no/ntb/dnbsjefen-oker-lonna-6.158.1199022.d953ae8565",
+      "published": "11.03.2026",
+      "publishedAt": "2026-03-11T00:00:00+00:00",
+      "summary": "Toppsjef Kjerstin Braathen f\u00e5r en l\u00f8nns\u00f8kning p\u00e5 mer enn 10 prosent fra i fjor, n\u00e5r hun n\u00e6rmer seg 20 millioner i \u00e5rsl\u00f8nn.",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
+    },
+    {
+      "title": "Alvorlig og uavklart for norsk skipsfart i Midt\u00f8sten",
+      "url": "https://frifagbevegelse.no/nyheter/alvorlig-og-uavklart-for-norsk-skipsfart-i-midtosten-6.158.1199011.158227bc4f",
+      "published": "11.03.2026",
+      "publishedAt": "2026-03-11T00:00:00+00:00",
+      "summary": "\u2013 En krevende situasjon for mannskapene, sier Knut Arild Hareide i Rederiforbundet.",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
+    },
+    {
+      "title": "Fellesforbundet anker Wolt-dom til H\u00f8yesterett",
+      "url": "https://frifagbevegelse.no/loaktuelt/fellesforbundet-anker-woltdom-til-hoyesterett-6.158.1198937.7ba20e0745",
+      "published": "11.03.2026",
+      "publishedAt": "2026-03-11T00:00:00+00:00",
+      "summary": "Wolt-budene har ikke krav p\u00e5 faste ansettelser, mente lagmannsretten. Feil tolkning av loven, mener LO-forbund.",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
+    },
+    {
+      "title": "13 meldinger om angrep mot skip i Midt\u00f8sten",
+      "url": "https://frifagbevegelse.no/nyheter/13-meldinger-om-angrep-mot-skip-i-midtosten-6.158.1198996.8a50eb61d7",
+      "published": "11.03.2026",
+      "publishedAt": "2026-03-11T00:00:00+00:00",
+      "summary": "Onsdag er det meldt om minst tre angrep mot skip i Persiabukta og Hormuzstredet.",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
+    },
+    {
+      "title": "Vil ha 15 m\u00e5neders fengsel for Vlantana-sjefen",
+      "url": "https://frifagbevegelse.no/magasinet-for-fagorganiserte/vil-ha-15-maneders-fengsel-for-vlantanasjefen-6.158.1198938.cd97b05632",
+      "published": "11.03.2026",
+      "publishedAt": "2026-03-11T00:00:00+00:00",
+      "summary": "Vladas Stoncius jr. havner i fengsel for grov underbetaling av lastebilsj\u00e5f\u00f8rer\u00a0\u2013 om aktor f\u00e5r det som han vil.",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
+    },
+    {
+      "title": "H\u00f8yre-kommuner skal satse p\u00e5 mer heltid etter dom om deltid",
+      "url": "https://frifagbevegelse.no/fagbladet/hoyrekommuner-skal-satse-pa-mer-heltid-etter-dom-om-deltid-6.158.1198970.78139b6a8c",
+      "published": "11.03.2026",
+      "publishedAt": "2026-03-11T00:00:00+00:00",
+      "summary": "Heltid oppgis som viktigste verkt\u00f8y for \u00e5 unng\u00e5 problematikken med overtidsbetaling for deltidsansatte i H\u00f8yre-styrte Trondheim og Bergen.",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
+    },
+    {
+      "title": "KI-ekspert slakter norske m\u00e5l for offentlig sektor",
+      "url": "https://frifagbevegelse.no/ntlmagasinet/kiekspert-slakter-norske-mal-for-offentlig-sektor-6.158.1198739.c1cd97d9de",
+      "published": "11.03.2026",
+      "publishedAt": "2026-03-11T00:00:00+00:00",
+      "summary": "\u2013 Stopp, tenk p\u00e5 hva KI skal brukes til og av hvem, r\u00e5der Paris Marx.",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
+    },
+    {
+      "title": "Tre partier \u00e5pner for ny kulldrift p\u00e5 Svalbard: \u2013 Verden er helt endret",
+      "url": "https://frifagbevegelse.no/arbeidsmanden/tre-partier-apner-for-ny-kulldrift-pa-svalbard--verden-er-helt-endret-6.158.1197668.0bb8094a99",
+      "published": "11.03.2026",
+      "publishedAt": "2026-03-11T00:00:00+00:00",
+      "summary": "Flertallet p\u00e5 Stortinget sier nei,. Frp, Sp og H\u00f8yre er med ulike grunner \u00e5pne for en restart.",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
+    },
+    {
+      "title": "Elkem kutter 300 stillinger",
+      "url": "https://frifagbevegelse.no/ntb/elkem-kutter-300-stillinger-6.158.1198936.4e273b475c",
+      "published": "11.03.2026",
+      "publishedAt": "2026-03-11T00:00:00+00:00",
+      "summary": "Industribedriften skal spare inn rundt 600 millioner kroner.",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
+    },
+    {
+      "title": "Dette m\u00e5 du tjene for \u00e5 g\u00e5 av med pensjon som 62-\u00e5ring",
+      "url": "https://frifagbevegelse.no/hknytt/dette-ma-du-tjene-for-a-ga-av-med-pensjon-som-62aring-6.158.1198449.a0c9a9caa9",
+      "published": "11.03.2026",
+      "publishedAt": "2026-03-11T00:00:00+00:00",
+      "summary": "Akkurat hvor viktig AFP er, kan du se i eksemplene Nav regnet ut i denne saken.",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
+    },
+    {
+      "title": "Regjeringen vil stille strengere krav til sykemeldte. Det misliker LO-topp",
+      "url": "https://frifagbevegelse.no/hknytt/regjeringen-vil-stille-strengere-krav-til-sykemeldte-det-misliker-lotopp-6.158.1198802.cc8dee7325",
+      "published": "11.03.2026",
+      "publishedAt": "2026-03-11T00:00:00+00:00",
+      "summary": "Christopher Beckham fra Handel og Kontor uttrykker bekymring over regjeringens forslag om \u00e5 endre sykel\u00f8nnsordningen. Fo",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
+    },
+    {
+      "title": "Skadd p\u00e5 jobben? No skal fleire skal f\u00e5 erstatning",
+      "url": "https://frifagbevegelse.no/fagbladet/skadd-pa-jobben-no-skal-fleire-skal-fa-erstatning-6.158.1198720.d46a5b3ce4",
+      "published": "11.03.2026",
+      "publishedAt": "2026-03-11T00:00:00+00:00",
+      "summary": "Dei er p\u00e5lagde \u00e5 \u00f8ve p\u00e5 \u00e5 handtere utagerande ungdom, men f\u00e5r ikkje erstatning om dei blir skadde. Regjeringa lovar nye reglar til v\u00e5ren.",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
     },
     {
       "title": "Disse bedriftene fikk tariffavtale i februar",
       "url": "https://www.fellesforbundet.no/aktuelt/nyheter/2026/disse-bedriftene-fikk-tariffavtale-i-februar/",
       "published": "10.03.2026",
-      "summary": "I l\u00f8pet av februar fikk hele 19 nye bedrifter tariffavtale med Fellesforbundet. Se oversikten over de nye tariffbedriftene her."
+      "publishedAt": "2026-03-10T00:00:00+00:00",
+      "summary": "I l\u00f8pet av februar fikk hele 19 nye bedrifter tariffavtale med Fellesforbundet. Se oversikten over de nye tariffbedriftene her.",
+      "sourceName": "Fellesforbundet",
+      "sourceUrl": "https://www.fellesforbundet.no/aktuelt/nyheter/"
+    },
+    {
+      "title": "Britiske fengsler er nesten helt fulle",
+      "url": "https://frifagbevegelse.no/nffmagasinet/britiske-fengsler-er-nesten-helt-fulle-6.158.1194460.b6319caee0",
+      "published": "10.03.2026",
+      "publishedAt": "2026-03-10T00:00:00+00:00",
+      "summary": "En lenge varslet kollaps av det britiske fengselsvesenet skal l\u00f8ses med 14.000 nye fengselsplasser innen 2031.",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
+    },
+    {
+      "title": "\u2013 Skjer det noe, kan du bli liggende til folk kommer p\u00e5 jobb klokka sju",
+      "url": "https://frifagbevegelse.no/arbeidsmanden/-skjer-det-noe-kan-du-bli-liggende-til-folk-kommer-pa-jobb-klokka-sju-6.158.1197926.2f3915a46c",
+      "published": "10.03.2026",
+      "publishedAt": "2026-03-10T00:00:00+00:00",
+      "summary": "Det er farlig n\u00e5r vektere, renholdere og andre ansatte stadig oftere m\u00e5 jobbe alene, advarer tillitsvalgt Vidar Skjelving.",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
+    },
+    {
+      "title": "Kraftmontasje-mont\u00f8r omkom i fallulykke",
+      "url": "https://frifagbevegelse.no/nettverk/kraftmontasjemontor-omkom-i-fallulykke-6.158.1198669.d5965daac7",
+      "published": "10.03.2026",
+      "publishedAt": "2026-03-10T00:00:00+00:00",
+      "summary": "Det var William Aleksander Breivik Eidhammer (22) som mistet livet etter fallulykken i Vindafjord kommune.",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
+    },
+    {
+      "title": "Renholdsbransjen ber politikere om hjelp til \u00e5 l\u00e6re ansatte norsk",
+      "url": "https://frifagbevegelse.no/arbeidsmanden/renholdsbransjen-ber-politikere-om-hjelp-til-a-lare-ansatte-norsk-6.158.1197524.496330db26",
+      "published": "10.03.2026",
+      "publishedAt": "2026-03-10T00:00:00+00:00",
+      "summary": "Renholdsbransjen ber staten om \u00f8kt st\u00f8tte til norskoppl\u00e6ring p\u00e5 arbeidsplassen for bedre integrering. NHO Service og Handel mener dagens system er for tungvint og \u00f8nsker mer forutsigbare l\u00f8sninger.",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
+    },
+    {
+      "title": "Frp vil kutte avgifter p\u00e5 mat og drivstoff",
+      "url": "https://frifagbevegelse.no/ntb/frp-vil-kutte-avgifter-pa-mat-og-drivstoff-6.158.1198687.01935cc3e1",
+      "published": "10.03.2026",
+      "publishedAt": "2026-03-10T00:00:00+00:00",
+      "summary": "Fremskrittspartiet foresl\u00e5r flere avgiftskutt for \u00e5 dempe kostnadsveksten etter den kraftige prisoppgang p\u00e5 olje og gass som f\u00f8lge av krigen i Midt\u00f8sten.",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
+    },
+    {
+      "title": "Lavere str\u00f8mpriser dempet prisveksten i februar",
+      "url": "https://frifagbevegelse.no/ntb/lavere-strompriser-dempet-prisveksten-i-februar-6.158.1198681.eb1c2649bf",
+      "published": "10.03.2026",
+      "publishedAt": "2026-03-10T00:00:00+00:00",
+      "summary": "Prisutviklingen for str\u00f8m, mat, m\u00f8bler og transport bidro mest til den svekkede veksten i februar.",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
+    },
+    {
+      "title": "Over halve befolkningen fikk penger fra Nav i 2025",
+      "url": "https://frifagbevegelse.no/nyheter/over-halve-befolkningen-fikk-penger-fra-nav-i-2025-6.158.1198668.374da4452c",
+      "published": "10.03.2026",
+      "publishedAt": "2026-03-10T00:00:00+00:00",
+      "summary": "Nav betalte ut 676 milliarder kroner i ytelser og alderspensjon i fjor, som er 42 milliarder kroner mer enn \u00e5ret f\u00f8r.",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
+    },
+    {
+      "title": "Kan jeg kreve overtidsbetalt som deltidsansatt?",
+      "url": "https://frifagbevegelse.no/loaktuelt/kan-jeg-kreve-overtidsbetalt-som-deltidsansatt-6.158.1197077.3abdc54849",
+      "published": "10.03.2026",
+      "publishedAt": "2026-03-10T00:00:00+00:00",
+      "summary": "En fersk dom gir deltidsansatte rett p\u00e5 overtidsbetaling fra f\u00f8rste time. Her er det du m\u00e5 vite.",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
+    },
+    {
+      "title": "Ann-Elisabeth var p\u00e5 vei til \u00e5 bli uf\u00f8r. S\u00e5 fikk hun jobb p\u00e5 Normal",
+      "url": "https://frifagbevegelse.no/hknytt/annelisabeth-var-pa-vei-til-a-bli-ufor-sa-fikk-hun-jobb-pa-normal-6.158.1198548.3803b7d911",
+      "published": "10.03.2026",
+      "publishedAt": "2026-03-10T00:00:00+00:00",
+      "summary": "Normal-butikken i Sarpsborg tilrettelegger for ansatte med helseutfordringer, som fibromyalgi og ADHD, og gir dem muligheten til \u00e5 v\u00e6re aktive i arbeidslivet.",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
+    },
+    {
+      "title": "Endringene Erlend gjorde ga han fast jobb: \u2013 Jeg spurte ikke om lov",
+      "url": "https://frifagbevegelse.no/hknytt/endringene-erlend-gjorde-ga-han-fast-jobb--jeg-spurte-ikke-om-lov-6.158.1194046.4a0c4facc3",
+      "published": "10.03.2026",
+      "publishedAt": "2026-03-10T00:00:00+00:00",
+      "summary": "Erlend Kummernes (33) passer godt inn som IT-konsulent ved Norske Skog i Levanger.",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
+    },
+    {
+      "title": "LO: Det er rom for et skikkelig l\u00f8nnsl\u00f8ft",
+      "url": "https://frifagbevegelse.no/nyheter/lo-det-er-rom-for-et-skikkelig-lonnsloft---6.158.1198503.d6740f8f35",
+      "published": "09.03.2026",
+      "publishedAt": "2026-03-09T00:00:00+00:00",
+      "summary": "Mange boligeiere har h\u00f8y rente. Det bekymrer sjef\u00f8konom Roger Bj\u00f8rnstad.",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
+    },
+    {
+      "title": "\u2013 Det blir for dumt. Jeg f\u00f8ler det er litt \u00abn\u00e5 eller aldri\u00bb",
+      "url": "https://frifagbevegelse.no/ntlmagasinet/-det-blir-for-dumt-jeg-foler-det-er-litt-na-eller-aldri-6.158.1196120.30abbabbb7",
+      "published": "09.03.2026",
+      "publishedAt": "2026-03-09T00:00:00+00:00",
+      "summary": "Navneskifte er tema nok en gang n\u00e5r debatten g\u00e5r om framtida for Norsk Tjenestemannslag (NTL).",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
+    },
+    {
+      "title": "Raymond Johansen sl\u00e5r alarm: \u2013 Palestina rives i filler",
+      "url": "https://frifagbevegelse.no/ntlmagasinet/raymond-johansen-slar-alarm--palestina-rives-i-filler-6.158.1196336.fb56fe4619",
+      "published": "09.03.2026",
+      "publishedAt": "2026-03-09T00:00:00+00:00",
+      "summary": "Folkehjelpens sjef forventer mer av norske politikere og fagbevegelsen. N\u00e5 frykter han for Palestinas framtid.",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
+    },
+    {
+      "title": "Stoltenberg: Feil \u00e5 tro at Norge vil tjene p\u00e5 krigen",
+      "url": "https://frifagbevegelse.no/nyheter/stoltenberg-feil-a-tro-at-norge-vil-tjene-pa-krigen-6.158.1198474.f9d6746b09",
+      "published": "09.03.2026",
+      "publishedAt": "2026-03-09T00:00:00+00:00",
+      "summary": "Vi vet ikke hvordan situasjonen i Midt\u00f8sten vil p\u00e5virke internasjonal \u00f8konomi, sier Jens Stoltenberg. Han advarer mot \u00e5 tro p\u00e5 at Norge vil tjene p\u00e5 krigen.",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
+    },
+    {
+      "title": "\u2013 Folk uten Norgespris kan f\u00e5 mye dyrere str\u00f8m",
+      "url": "https://frifagbevegelse.no/nyheter/-folk-uten-norgespris-kan-fa-mye-dyrere-strom-6.158.1198472.59f3cbd2ee",
+      "published": "09.03.2026",
+      "publishedAt": "2026-03-09T00:00:00+00:00",
+      "summary": "Iran-krigen gir grunn for nordmenn til \u00e5 frykte h\u00f8yere str\u00f8mpriser mer enn dyrere drivstoff, mener ekspert Ole Gunnar Austvik.",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
+    },
+    {
+      "title": "\u2013 Sykepenger kan bli l\u00f8nnsoppgj\u00f8rets vanskeligste sak",
+      "url": "https://frifagbevegelse.no/magasinet-for-fagorganiserte/-sykepenger-kan-bli-lonnsoppgjorets-vanskeligste-sak-6.158.1197753.bd234ac9f7",
+      "published": "09.03.2026",
+      "publishedAt": "2026-03-09T00:00:00+00:00",
+      "summary": "Det er alltid fare for streik, mener forhandlingsleder Christian Justnes. N\u00e5 ber han medlemmene lese seg opp",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
+    },
+    {
+      "title": "Bane Nor-kaoset: Baserte seg p\u00e5 uriktig informasjon",
+      "url": "https://frifagbevegelse.no/nyheter/bane-norkaoset-baserte-seg-pa-uriktig-informasjon-6.158.1198466.c5e9d45548",
+      "published": "09.03.2026",
+      "publishedAt": "2026-03-09T00:00:00+00:00",
+      "summary": "Uheldig, sier samferdselsminister Jon-Ivar Nyg\u00e5rd (Ap). N\u00e5 krever Frp svar.",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
+    },
+    {
+      "title": "Unders\u00f8kelse: Menn under 30 vil helst forhandle l\u00f8nna selv",
+      "url": "https://frifagbevegelse.no/nyheter/undersokelse-menn-under-30-vil-helst-forhandle-lonna-selv-6.158.1198443.50c01edcb7",
+      "published": "09.03.2026",
+      "publishedAt": "2026-03-09T00:00:00+00:00",
+      "summary": "Unge menn i Norge har st\u00f8rre aksept for l\u00f8nnsforskjeller og vil helst forhandle l\u00f8nna selv, if\u00f8lge en ny unders\u00f8kelse.",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
+    },
+    {
+      "title": "2,7 millioner nordmenn ligger an til \u00e5 f\u00e5 igjen p\u00e5 skatten",
+      "url": "https://frifagbevegelse.no/nyheter/27-millioner-nordmenn-ligger-an-til-a-fa-igjen-pa-skatten-6.158.1198436.2d2f564379",
+      "published": "09.03.2026",
+      "publishedAt": "2026-03-09T00:00:00+00:00",
+      "summary": "Det kan v\u00e6re l\u00f8nnsomt \u00e5 sjekke meldingen grundig, sier skatteetaten.",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
+    },
+    {
+      "title": "Telefonien jubilerer: P\u00e5 tr\u00e5den i 150 \u00e5r",
+      "url": "https://frifagbevegelse.no/nyheter/telefonien-jubilerer-pa-traden-i-150-ar-6.158.1198424.bd93aadd1c",
+      "published": "09.03.2026",
+      "publishedAt": "2026-03-09T00:00:00+00:00",
+      "summary": "Flere oppfinnere utviklet apparater som muliggjorde samtaler over distanse, men Alexander Graham Bell var f\u00f8rst ute 7. mars 1876.",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
+    },
+    {
+      "title": "Disse skal forhandle l\u00f8nna di",
+      "url": "https://frifagbevegelse.no/magasinet-for-fagorganiserte/disse-skal-forhandle-lonna-di-6.158.1197561.d3b72e3b18",
+      "published": "09.03.2026",
+      "publishedAt": "2026-03-09T00:00:00+00:00",
+      "summary": "23. mars overrekker Fellesforbundet og Norsk Industri kravene i \u00e5rets l\u00f8nnsoppgj\u00f8r. Det er starten p\u00e5 det s\u00e5kalte frontfagsoppgj\u00f8ret.",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
+    },
+    {
+      "title": "Medlemsveksten til LO flater ut",
+      "url": "https://frifagbevegelse.no/loaktuelt/medlemsveksten-til-lo-flater-ut-6.158.1197190.312ba79e81",
+      "published": "09.03.2026",
+      "publishedAt": "2026-03-09T00:00:00+00:00",
+      "summary": "Men i lufta, til sj\u00f8s og blant studentene vokser de kraftig.",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
+    },
+    {
+      "title": "Kvinnedagen markeres verden rundt",
+      "url": "https://frifagbevegelse.no/nyheter/kvinnedagen-markeres-verden-rundt-6.158.1198360.ae579c1d82",
+      "published": "08.03.2026",
+      "publishedAt": "2026-03-08T00:00:00+00:00",
+      "summary": "Den internasjonale kvinnedagen ble markert med appeller, musikkinnslag og tog over hele verden s\u00f8ndag 8. mars.",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
+    },
+    {
+      "title": "Fem tips til kvinner for \u00e5 bli \u00f8konomisk selvstendig",
+      "url": "https://frifagbevegelse.no/hknytt/fem-tips-til-kvinner-for-a-bli-okonomisk-selvstendig-6.158.1198044.24542c10ac",
+      "published": "08.03.2026",
+      "publishedAt": "2026-03-08T00:00:00+00:00",
+      "summary": "Altfor mange kvinner blir i d\u00e5rlige forhold fordi de ikke kan fors\u00f8rge seg selv, advarer Linn Andersen, ekspert p\u00e5 likestilling.",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
+    },
+    {
+      "title": "Kiwi-kundene str\u00f8mmer til p\u00e5 en s\u00f8ndag: \u2013 Butikken bryter loven",
+      "url": "https://frifagbevegelse.no/hknytt/kiwikundene-strommer-til-pa-en-sondag--butikken-bryter-loven-6.158.1197990.d9017adbd0",
+      "published": "08.03.2026",
+      "publishedAt": "2026-03-08T00:00:00+00:00",
+      "summary": "Kiwi-kundene str\u00f8mmer inn til Kiwi Bogstad p\u00e5 en s\u00f8ndag. LO-forbundet Handel og Kontor mener de bryter helligdagsloven.",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
+    },
+    {
+      "title": "L\u00f8nnsgapet: Her er forklaringen",
+      "url": "https://frifagbevegelse.no/loaktuelt/lonnsgapet-her-er-forklaringen-6.158.1197277.84a94c983b",
+      "published": "08.03.2026",
+      "publishedAt": "2026-03-08T00:00:00+00:00",
+      "summary": "Fortsatt tjener kvinner mindre enn menn. Her er grafene som forklarer forskjellene.",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
+    },
+    {
+      "title": "J\u00f8rn Eggum slutter i Fellesforbundet",
+      "url": "https://frifagbevegelse.no/magasinet-for-fagorganiserte/jorn-eggum-slutter-i-fellesforbundet-6.158.1198242.550281340d",
+      "published": "07.03.2026",
+      "publishedAt": "2026-03-07T00:00:00+00:00",
+      "summary": "J\u00f8rn Eggum, som var leder i Fellesforbundet i ti \u00e5r fram til han trakk seg fra vervet i juni i fjor, har inntil denne uka fortsatt v\u00e6rt ansatt i forbundet.",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
+    },
+    {
+      "title": "Selina lever brakkelivet langt hjemmefra",
+      "url": "https://frifagbevegelse.no/loaktuelt/selina-lever-brakkelivet-langt-hjemmefra-6.595.1192539.bd6028ad6b",
+      "published": "07.03.2026",
+      "publishedAt": "2026-03-07T00:00:00+00:00",
+      "summary": "22-\u00e5ringen har funnet sin andre familie langs E6 i Tr\u00f8ndelag i anleggsbedriften H\u00e6hre.",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
+    },
+    {
+      "title": "Dette er NHOs tilbud til arbeidstakerne",
+      "url": "https://frifagbevegelse.no/nyheter/dette-er-nhos-tilbud-til-arbeidstakerne-6.158.1197948.6e1ab88626",
+      "published": "07.03.2026",
+      "publishedAt": "2026-03-07T00:00:00+00:00",
+      "summary": "Arbeidsgiverne har en klar beskjed om b\u00e5de ekstrapensjon og kortere arbeidsdager.",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
+    },
+    {
+      "title": "Eldre arbeidstakere d\u00f8r oftere p\u00e5 jobb",
+      "url": "https://frifagbevegelse.no/loaktuelt/eldre-arbeidstakere-dor-oftere-pa-jobb-6.158.1197645.e2e1f19522",
+      "published": "07.03.2026",
+      "publishedAt": "2026-03-07T00:00:00+00:00",
+      "summary": "30 mennesker d\u00f8de p\u00e5 jobb i 2025. Halvparten var over 55 \u00e5r.",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
+    },
+    {
+      "title": "Dyrelinja redda Robbin (18): \u2013 Jeg hadde ikke fullf\u00f8rt videreg\u00e5ende uten",
+      "url": "https://frifagbevegelse.no/i-skolen/dyrelinja-redda-robbin-18--jeg-hadde-ikke-fullfort-videregaende-uten-6.469.1192831.dc4583bbdd",
+      "published": "07.03.2026",
+      "publishedAt": "2026-03-07T00:00:00+00:00",
+      "summary": "Fra h\u00f8sten legges dyrelinja i Sarpsborg ned. er det slutt. Fylket mener det er for f\u00e5 som s\u00f8ker dit. For Robbin Vikerheim var tilbudet avgj\u00f8rende.",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
+    },
+    {
+      "title": "Tysk fagbevegelse tapte mot Musk",
+      "url": "https://frifagbevegelse.no/magasinet-for-fagorganiserte/tysk-fagbevegelse-tapte-mot-musk-6.158.1197946.7eb13ba91f",
+      "published": "06.03.2026",
+      "publishedAt": "2026-03-06T00:00:00+00:00",
+      "summary": "Tysklands st\u00f8rste fagforening\u00a0mistet st\u00f8tte fra de ansatte ved bilfabrikken til Tesla utenfor Berlin.",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
+    },
+    {
+      "title": "Ansatte vet ikke hvor de skal jobbe n\u00e5r Oslo fengsel stenger",
+      "url": "https://frifagbevegelse.no/nffmagasinet/ansatte-vet-ikke-hvor-de-skal-jobbe-nar-oslo-fengsel-stenger-6.158.1197719.8526115fbb",
+      "published": "06.03.2026",
+      "publishedAt": "2026-03-06T00:00:00+00:00",
+      "summary": "Ingen mister jobben, men ansatte i Oslo fengsel lurer p\u00e5 hvor de skal jobben\u00e5r det falleferdige fengselet stenger portene for godt.",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
+    },
+    {
+      "title": "Sjefen i Forsvarsbygg omplassert etter overforbruk",
+      "url": "https://frifagbevegelse.no/nyheter/sjefen-i-forsvarsbygg-omplassert-etter-overforbruk-6.158.1197918.4d68795b97",
+      "published": "06.03.2026",
+      "publishedAt": "2026-03-06T00:00:00+00:00",
+      "summary": "Forsvarsdepartementet har mistet tilliten til Forsvarsbygg-sjef Thorbj\u00f8rn Thoresen etter overforbruk.",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
+    },
+    {
+      "title": "Hundre bilister fikk fartsbot \u2013 alle slapp \u00e5 betale",
+      "url": "https://frifagbevegelse.no/arbeidsmanden/hundre-bilister-fikk-fartsbot--alle-slapp-a-betale-6.158.1196121.7a358776af",
+      "published": "06.03.2026",
+      "publishedAt": "2026-03-06T00:00:00+00:00",
+      "summary": "UP-sjef Anders Sj\u00f8tr\u00f8 i Midt-Norge fortviler: Fartssyndere slipper unna p\u00e5 grunn av ugyldige skilt.",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
+    },
+    {
+      "title": "Kristoffer jobber fulltid, men sliter med \u00e5 f\u00e5 l\u00f8nna til \u00e5 strekke til",
+      "url": "https://frifagbevegelse.no/nyheter/kristoffer-jobber-fulltid-men-sliter-med-a-fa-lonna-til-a-strekke-til-6.158.1197763.8611be5073",
+      "published": "06.03.2026",
+      "publishedAt": "2026-03-06T00:00:00+00:00",
+      "summary": "Butikkmedarbeideren jobber fulltid p\u00e5 Meny, men m\u00e5 ta grep for \u00e5 klare seg etter at de faste utgiftene er betalt.",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
+    },
+    {
+      "title": "Drept p\u00e5 jobb: Tamima er hovedparole p\u00e5 kvinnedagen",
+      "url": "https://frifagbevegelse.no/fontene/drept-pa-jobb-tamima-er-hovedparole-pa-kvinnedagen-6.158.1197550.8ac74e98ce",
+      "published": "06.03.2026",
+      "publishedAt": "2026-03-06T00:00:00+00:00",
+      "summary": "\u2013 For meg er det viktig \u00e5 vise at kvinnebevegelsen er antirasistisk og imot muslimhat, sier Rabia Musavi.",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
+    },
+    {
+      "title": "NHO avviser krav om sykepenger",
+      "url": "https://frifagbevegelse.no/nyheter/nho-avviser-krav-om-sykepenger-6.158.1197826.05eab066f2",
+      "published": "05.03.2026",
+      "publishedAt": "2026-03-05T00:00:00+00:00",
+      "summary": "LO vil at arbeidsgiver skal forskuttere syke-, foreldre- og pleiepenger. NHO sier blankt nei.",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
+    },
+    {
+      "title": "Deltidsansatt? Da kan du ha krav p\u00e5 penger fra jobben",
+      "url": "https://frifagbevegelse.no/loaktuelt/deltidsansatt-da-kan-du-ha-krav-pa-penger-fra-jobben-6.158.1196985.9c75917585",
+      "published": "05.03.2026",
+      "publishedAt": "2026-03-05T00:00:00+00:00",
+      "summary": "Deltidsansatte har ikke f\u00e5tt overtidsbetalt. Etter en ny dom fra tingretten kan du ha rett p\u00e5 tusenvis av kroner etterbetalt.",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
+    },
+    {
+      "title": "Slo, spyttet p\u00e5 og truet Wider\u00f8e-ansatt \u2013 n\u00e5 m\u00e5 mannen i fengsel",
+      "url": "https://frifagbevegelse.no/hknytt/slo-spyttet-pa-og-truet-wideroeansatt--na-ma-mannen-i-fengsel-6.158.1197562.b1b8537fb9",
+      "published": "05.03.2026",
+      "publishedAt": "2026-03-05T00:00:00+00:00",
+      "summary": "Mannen som slo, spyttet og truet en Wider\u00f8e-ansatt har f\u00e5tt sin dom fra Tingretten. Dommen gir sterke signaler om konsekvenser for vold mot ansatte som utf\u00f8rer jobben sin, fastsl\u00e5r tillitsvalgt i luftfarten.",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
+    },
+    {
+      "title": "Coop ble d\u00f8mt: \u2013 Endelig et tiltak som faktisk l\u00f8fter underbetalte kvinner",
+      "url": "https://frifagbevegelse.no/hknytt/coop-ble-domt--endelig-et-tiltak-som-faktisk-lofter-underbetalte-kvinner-6.158.1197230.9a2d272190",
+      "published": "05.03.2026",
+      "publishedAt": "2026-03-05T00:00:00+00:00",
+      "summary": "Deltidsansatte Andr\u00e9 vant fram mot Coop om retten til overtidsbetalt. Det kan hjelpe lavl\u00f8nte i butikker og helsesektoren, mener\u00a0John Thomas Suhr, topptillitsvalgt i varehandelen.",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
+    },
+    {
+      "title": "Garderobeproblemer i Tine: \u2013 Et eksempel p\u00e5 arbeiderforakt",
+      "url": "https://frifagbevegelse.no/nnnarbeideren/garderobeproblemer-i-tine--et-eksempel-pa-arbeiderforakt-6.158.1197640.290a132cfe",
+      "published": "05.03.2026",
+      "publishedAt": "2026-03-05T00:00:00+00:00",
+      "summary": "D\u00e5rlig ventilasjon og mugglukt har f\u00f8rt til langvarige garderobeproblemer p\u00e5 Tine Kalbakken, skriver Nationen.",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
+    },
+    {
+      "title": "Mette Frederiksen vil ha formuesskatt i Danmark",
+      "url": "https://frifagbevegelse.no/nyheter/mette-frederiksen-vil-ha-formuesskatt-i-danmark-6.158.1196920.cd40ba093a",
+      "published": "05.03.2026",
+      "publishedAt": "2026-03-05T00:00:00+00:00",
+      "summary": "Statsministeren g\u00e5r til valg p\u00e5 \u00e5 skattlegge landets rikeste.",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
+    },
+    {
+      "title": "N\u00e5 flytter 2000 ansatte inn i det nye regjeringskvartalet",
+      "url": "https://frifagbevegelse.no/ntlmagasinet/na-flytter-2000-ansatte-inn-i-det-nye-regjeringskvartalet-6.469.1195579.ed375965c8",
+      "published": "05.03.2026",
+      "publishedAt": "2026-03-05T00:00:00+00:00",
+      "summary": "F\u00f8r p\u00e5ske skal de fleste v\u00e6re p\u00e5 plass.",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
+    },
+    {
+      "title": "Hvert femte barn i Danmark g\u00e5r p\u00e5 privatskole",
+      "url": "https://frifagbevegelse.no/loaktuelt/hvert-femte-barn-i-danmark-gar-pa-privatskole-6.158.1197434.448a1b3b03",
+      "published": "04.03.2026",
+      "publishedAt": "2026-03-04T00:00:00+00:00",
+      "summary": "S\u00e6rlig \u00e9n gruppe velger bort den offentlige skolen. \u2013 En risiko for at den offentlige skolen mister sin status som det naturlige skolevalget.",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
+    },
+    {
+      "title": "Equinor deler ut 1,3 milliarder i bonus til ansatte",
+      "url": "https://frifagbevegelse.no/nyheter/equinor-deler-ut-13-milliarder-i-bonus-til-ansatte-6.158.1197558.96f83e54a1",
+      "published": "04.03.2026",
+      "publishedAt": "2026-03-04T00:00:00+00:00",
+      "summary": "Nesten 20.000 Equinor-ansatte f\u00e5r utbetalt sju prosent av l\u00f8nnen sin i bonus i \u00e5r.",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
+    },
+    {
+      "title": "LOs sjef\u00f8konom advarer Norges Bank",
+      "url": "https://frifagbevegelse.no/nyheter/los-sjefokonom-advarer-norges-bank-6.158.1197139.a88bfa0400",
+      "published": "04.03.2026",
+      "publishedAt": "2026-03-04T00:00:00+00:00",
+      "summary": "Folk m\u00e5 f\u00e5 lavere rente p\u00e5 l\u00e5nene sine, mener Roger Bj\u00f8rnstad.",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
+    },
+    {
+      "title": "Deltidsansatte Andr\u00e9 vant i retten. N\u00e5 anker Virke dommen",
+      "url": "https://frifagbevegelse.no/hknytt/deltidsansatte-andre-vant-i-retten-na-anker-virke-dommen-6.158.1197517.e2e176e246",
+      "published": "04.03.2026",
+      "publishedAt": "2026-03-04T00:00:00+00:00",
+      "summary": "Sp\u00f8rsm\u00e5lene fortjener en grundig behandling i rettssystemet, mener Virke-direkt\u00f8r Stian Sigurdsen. Skuffende, mener LO og Handel og Kontor.",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
+    },
+    {
+      "title": "Vil ha seks\u00e5ringene ut av klasserommene",
+      "url": "https://frifagbevegelse.no/i-skolen/vil-ha-seksaringene-ut-av-klasserommene-6.158.1196293.08c6e7a618",
+      "published": "04.03.2026",
+      "publishedAt": "2026-03-04T00:00:00+00:00",
+      "summary": "De unge er i stadig d\u00e5rligere form. Derfor vil Senterpartiet ha mer aktivitet og lek i skolen.",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
+    },
+    {
+      "title": "Elon Musk truer med investeringsstopp hvis fagforeninga vinner",
+      "url": "https://frifagbevegelse.no/magasinet-for-fagorganiserte/elon-musk-truer-med-investeringsstopp-hvis-fagforeninga-vinner-6.158.1197176.3a015de059",
+      "published": "04.03.2026",
+      "publishedAt": "2026-03-04T00:00:00+00:00",
+      "summary": "Anklager om fagforeningsknusing og ansatte med taushetserkl\u00e6ring preger valget av tillitsvalgte ved Teslas bilfabrikk utenfor Berlin.",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
+    },
+    {
+      "title": "Konkurs tross milliardinntekter: \u2013 Kan bli en voldsom dominoeffekt",
+      "url": "https://frifagbevegelse.no/arbeidsmanden/konkurs-tross-milliardinntekter--kan-bli-en-voldsom-dominoeffekt-6.158.1197417.5e752fc255",
+      "published": "04.03.2026",
+      "publishedAt": "2026-03-04T00:00:00+00:00",
+      "summary": "Entrepren\u00f8rgiganten Bertelsen & Garpestad er sl\u00e5tt konkurs. Konkursen kan f\u00f8re til en dominoeffekt som rammer sm\u00e5bedrifter hardt. Over 475 ansatte st\u00e5r n\u00e5 uten arbeid, og situasjonen er preget av usikkerhet.",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
+    },
+    {
+      "title": "Bane Nor-kaoset vokser",
+      "url": "https://frifagbevegelse.no/nyheter/bane-norkaoset-vokser-6.158.1197470.23fb0ccf49",
+      "published": "04.03.2026",
+      "publishedAt": "2026-03-04T00:00:00+00:00",
+      "summary": "N\u00e5 anklages regjeringen for \u00e5 ha mistet kontrollen over jernbanesektoren.",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
+    },
+    {
+      "title": "NHO avlyser rentekutt i \u00e5r",
+      "url": "https://frifagbevegelse.no/nyheter/nho-avlyser-rentekutt-i-ar-6.158.1197406.6b66f20e76",
+      "published": "04.03.2026",
+      "publishedAt": "2026-03-04T00:00:00+00:00",
+      "summary": "Du kan bare glemme billigere boligl\u00e5n i \u00e5r, hvis NHO f\u00e5r rett.",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
+    },
+    {
+      "title": "Mann mistet livet i arbeidsulykke",
+      "url": "https://frifagbevegelse.no/ntb/mann-mistet-livet-i-arbeidsulykke-6.158.1197426.1830c1208b",
+      "published": "04.03.2026",
+      "publishedAt": "2026-03-04T00:00:00+00:00",
+      "summary": "En mann i 20-\u00e5rene er d\u00f8d etter \u00e5 ha falt ned fra en mast i Vindafjord kommune i Rogaland i ettermiddag.",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
+    },
+    {
+      "title": "Bane Nor m\u00e5 forklare seg for samferdselsministeren",
+      "url": "https://frifagbevegelse.no/nyheter/bane-nor-ma-forklare-seg-for-samferdselsministeren-6.158.1197421.4215156d30",
+      "published": "04.03.2026",
+      "publishedAt": "2026-03-04T00:00:00+00:00",
+      "summary": "Bane Nor varslet mandag at de utsetter og stanser en rekke utbyggingsprosjekter. N\u00e5 er selskapet kalt inn til m\u00f8te med samferdselsminister Jon-Ivar Nyg\u00e5rd.",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
+    },
+    {
+      "title": "Oscar er en av Norges sterkeste \u2013 drar over 18 tonn lastebil alene",
+      "url": "https://frifagbevegelse.no/magasinet-for-fagorganiserte/oscar-er-en-av-norges-sterkeste--drar-over-18-tonn-lastebil-alene-6.158.1190993.dd2a1683c3",
+      "published": "04.03.2026",
+      "publishedAt": "2026-03-04T00:00:00+00:00",
+      "summary": "Lagerarbeideren drar\u00a0over 18 tonn lastebil alene.",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
+    },
+    {
+      "title": "45.000 flere nordmenn tjener d\u00e5rlig",
+      "url": "https://frifagbevegelse.no/nyheter/45000-flere-nordmenn-tjener-darlig-6.158.1196908.a594bb289c",
+      "published": "04.03.2026",
+      "publishedAt": "2026-03-04T00:00:00+00:00",
+      "summary": "Antall lavtl\u00f8nte med en heltidsjobb har \u00f8kt de siste to \u00e5rene. I 2023 var det 338.000 lavtl\u00f8nte i Norge. I 2025 hadde dette tallet \u00f8kt til 383.000. N\u00e5 varsler LO grep.",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
     },
     {
       "title": "Fellesforbundet vil sikre kompetansen n\u00e6ringslivet trenger",
       "url": "https://www.fellesforbundet.no/aktuelt/nyheter/2026/fellesforbundet-vil-sikre-kompetansen-norsk-arbeidsliv-trenger/",
       "published": "03.03.2026",
-      "summary": "NHOs kompetansebarometer for 2025 sl\u00e5r fast at 6 av 10 norske bedrifter har et udekket kompetansebehov og at ettersp\u00f8rselen etter kvalifiserte fagarbeidere er s\u00e6rlig h\u00f8y innen teknologi- og industrifag, elektro, samt bygg og anlegg."
+      "publishedAt": "2026-03-03T00:00:00+00:00",
+      "summary": "NHOs kompetansebarometer for 2025 sl\u00e5r fast at 6 av 10 norske bedrifter har et udekket kompetansebehov og at ettersp\u00f8rselen etter kvalifiserte fagarbeidere er s\u00e6rlig h\u00f8y innen teknologi- og industrifag, elektro, samt bygg og anlegg.",
+      "sourceName": "Fellesforbundet",
+      "sourceUrl": "https://www.fellesforbundet.no/aktuelt/nyheter/"
+    },
+    {
+      "title": "Gir ikke opp kampen om posttjenester for eldre",
+      "url": "https://frifagbevegelse.no/nyheter/gir-ikke-opp-kampen-om-posttjenester-for-eldre-6.158.1196094.5d6a1a1d93",
+      "published": "03.03.2026",
+      "publishedAt": "2026-03-03T00:00:00+00:00",
+      "summary": "AUF og Fagforbundet vil kjempe for at det skal innf\u00f8res et d\u00f8rterskeltilbud som et pr\u00f8veprosjekt over tre \u00e5r.",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
     },
     {
       "title": "Tap mot Wolt i Lagmannsretten",
       "url": "https://www.fellesforbundet.no/aktuelt/nyheter/2026/tap-mot-wolt-i-lagmannsretten/",
       "published": "24.02.2026",
-      "summary": "Sykkelbudene i Wolt, organisert i Fellesforbundet, tapte i Lagmannsretten etter \u00e5 ha vunnet i Tingretten."
+      "publishedAt": "2026-02-24T00:00:00+00:00",
+      "summary": "Sykkelbudene i Wolt, organisert i Fellesforbundet, tapte i Lagmannsretten etter \u00e5 ha vunnet i Tingretten.",
+      "sourceName": "Fellesforbundet",
+      "sourceUrl": "https://www.fellesforbundet.no/aktuelt/nyheter/"
     },
     {
       "title": "Fellesforbundet leder \u00e5rets l\u00f8nnsoppgj\u00f8r",
       "url": "https://www.fellesforbundet.no/aktuelt/nyheter/2026/fellesforbundet-leder-arets-lonnsoppgjor/",
       "published": "17.02.2026",
-      "summary": "LOs representantskap vedtok i dag at \u00e5rets l\u00f8nnsoppgj\u00f8r skal gjennomf\u00f8res forbundsvist. Det betyr at Fellesforbundet, med frontfaget, g\u00e5r f\u00f8rst i forhandlingene og legger rammen for resten av oppgj\u00f8rene."
+      "publishedAt": "2026-02-17T00:00:00+00:00",
+      "summary": "LOs representantskap vedtok i dag at \u00e5rets l\u00f8nnsoppgj\u00f8r skal gjennomf\u00f8res forbundsvist. Det betyr at Fellesforbundet, med frontfaget, g\u00e5r f\u00f8rst i forhandlingene og legger rammen for resten av oppgj\u00f8rene.",
+      "sourceName": "Fellesforbundet",
+      "sourceUrl": "https://www.fellesforbundet.no/aktuelt/nyheter/"
     },
     {
       "title": "TBU: \u2013 Rom for reall\u00f8nnsvekst i 2026",
       "url": "https://www.fellesforbundet.no/aktuelt/nyheter/2026/tbu--rom-for-reallonnsvekst-i-2026/",
       "published": "13.02.2026",
-      "summary": "Tallgrunnlaget f\u00f8r l\u00f8nnsoppgj\u00f8ret viser at industrien g\u00e5r godt og at det er rom for reall\u00f8nnsvekst i 2026."
+      "publishedAt": "2026-02-13T00:00:00+00:00",
+      "summary": "Tallgrunnlaget f\u00f8r l\u00f8nnsoppgj\u00f8ret viser at industrien g\u00e5r godt og at det er rom for reall\u00f8nnsvekst i 2026.",
+      "sourceName": "Fellesforbundet",
+      "sourceUrl": "https://www.fellesforbundet.no/aktuelt/nyheter/"
     },
     {
       "title": "Bransjekonferansen industri: Mange tusen arbeidsplasser st\u00e5r p\u00e5 spill \u2013 stortingsflertallet m\u00e5 snu",
       "url": "https://www.fellesforbundet.no/aktuelt/nyheter/2026/bransjekonferansen-industri-mange-tusen-arbeidsplasser-star-pa-spill--stortingsflertallet-ma-snu/",
       "published": "05.02.2026",
-      "summary": "Rundt 110 industritillitsvalgte fra hele landet var tirsdag og onsdag samlet til bransjekonferanse industri for \u00e5 diskutere tarifforhandlinger og n\u00e6ringspolitikk."
+      "publishedAt": "2026-02-05T00:00:00+00:00",
+      "summary": "Rundt 110 industritillitsvalgte fra hele landet var tirsdag og onsdag samlet til bransjekonferanse industri for \u00e5 diskutere tarifforhandlinger og n\u00e6ringspolitikk.",
+      "sourceName": "Fellesforbundet",
+      "sourceUrl": "https://www.fellesforbundet.no/aktuelt/nyheter/"
     },
     {
       "title": "Melk\u00f8ya: SV tar ansvar",
       "url": "https://www.fellesforbundet.no/aktuelt/nyheter/2026/melkoya-sv-tar-ansvar/",
       "published": "04.02.2026",
-      "summary": "SV avklarte onsdag ettermiddag at de ikke vil stemme for R\u00f8dts forslag om \u00e5 ta fra Melk\u00f8ya krafta de trenger for \u00e5 bli et industriprosjekt for framtida."
+      "publishedAt": "2026-02-04T00:00:00+00:00",
+      "summary": "SV avklarte onsdag ettermiddag at de ikke vil stemme for R\u00f8dts forslag om \u00e5 ta fra Melk\u00f8ya krafta de trenger for \u00e5 bli et industriprosjekt for framtida.",
+      "sourceName": "Fellesforbundet",
+      "sourceUrl": "https://www.fellesforbundet.no/aktuelt/nyheter/"
     },
     {
       "title": "Et opprop fra fagbevegelsen og n\u00e6ringslivet",
       "url": "https://www.fellesforbundet.no/aktuelt/nyheter/2026/et-opprop-fra-fagbevegelsen-og-naringslivet/",
       "published": "04.02.2026",
-      "summary": "Forutsigbarhet for n\u00e6ringslivet er avgj\u00f8rende for investeringer, arbeidsplasser og konkurransekraft."
+      "publishedAt": "2026-02-04T00:00:00+00:00",
+      "summary": "Forutsigbarhet for n\u00e6ringslivet er avgj\u00f8rende for investeringer, arbeidsplasser og konkurransekraft.",
+      "sourceName": "Fellesforbundet",
+      "sourceUrl": "https://www.fellesforbundet.no/aktuelt/nyheter/"
     },
     {
       "title": "Fellesforbundet krever \u00f8kt kj\u00f8pekraft og forskuttering av sykepenger i \u00e5rets l\u00f8nnsoppgj\u00f8r",
       "url": "https://www.fellesforbundet.no/aktuelt/nyheter/2026/fellesforbundet-krever-okt-kjopekraft-og-forskuttering-av-sykepenger-i-arets-lonnsoppgjor/",
       "published": "29.01.2026",
-      "summary": "\u00c5rets l\u00f8nnsoppgj\u00f8r er rett rundt hj\u00f8rnet og forbundsstyret i Fellesforbundet har denne uken vedtatt en tydelig kravliste."
+      "publishedAt": "2026-01-29T00:00:00+00:00",
+      "summary": "\u00c5rets l\u00f8nnsoppgj\u00f8r er rett rundt hj\u00f8rnet og forbundsstyret i Fellesforbundet har denne uken vedtatt en tydelig kravliste.",
+      "sourceName": "Fellesforbundet",
+      "sourceUrl": "https://www.fellesforbundet.no/aktuelt/nyheter/"
     },
     {
       "title": "LO og spekter enige om ny hovedavtale",
       "url": "https://www.fellesforbundet.no/aktuelt/nyheter/2026/lo-og-spekter-enige-om-ny-hovedavtale/",
       "published": "29.01.2026",
-      "summary": "Beredskap og tillitsvalgtes vilk\u00e5r for \u00e5 utf\u00f8re sitt verv var viktige tema da LO og Spekter ble enige om ny hovedavtale i fire nye \u00e5r. "
+      "publishedAt": "2026-01-29T00:00:00+00:00",
+      "summary": "Beredskap og tillitsvalgtes vilk\u00e5r for \u00e5 utf\u00f8re sitt verv var viktige tema da LO og Spekter ble enige om ny hovedavtale i fire nye \u00e5r. ",
+      "sourceName": "Fellesforbundet",
+      "sourceUrl": "https://www.fellesforbundet.no/aktuelt/nyheter/"
     },
     {
       "title": "Stian Sagvold med appell til aksjonistene ved MAN Truck & Bus i Tr\u00f8ndelag",
       "url": "https://www.fellesforbundet.no/aktuelt/nyheter/2026/stian-sagvold-med-appell-til-aksjonen-ved-man/",
       "published": "27.01.2026",
-      "summary": "Nestleder i Fellesforbundet, Stian Sagvold holdt mandag en appell til medlemmene i MAN Truck & Bus i Tr\u00f8ndelag som dagser i protest mot manglende lokale l\u00f8nnsforhandlinger."
+      "publishedAt": "2026-01-27T00:00:00+00:00",
+      "summary": "Nestleder i Fellesforbundet, Stian Sagvold holdt mandag en appell til medlemmene i MAN Truck & Bus i Tr\u00f8ndelag som dagser i protest mot manglende lokale l\u00f8nnsforhandlinger.",
+      "sourceName": "Fellesforbundet",
+      "sourceUrl": "https://www.fellesforbundet.no/aktuelt/nyheter/"
     },
     {
       "title": "Enighet om nye hovedavtaler med NHO og Virke",
       "url": "https://www.fellesforbundet.no/aktuelt/nyheter/2026/enighet-om-nye-hovedavtaler-med-nho-og-virke/",
       "published": "09.01.2026",
-      "summary": "LO er blitt enige med b\u00e5de NHO og Virke om nye hovedavtaler. Disse gjelder fra 1. januar 2026 til 31. desember 2029. "
+      "publishedAt": "2026-01-09T00:00:00+00:00",
+      "summary": "LO er blitt enige med b\u00e5de NHO og Virke om nye hovedavtaler. Disse gjelder fra 1. januar 2026 til 31. desember 2029. ",
+      "sourceName": "Fellesforbundet",
+      "sourceUrl": "https://www.fellesforbundet.no/aktuelt/nyheter/"
     },
     {
       "title": "Fantastisk gode nyheter for norske arbeidsplasser",
       "url": "https://www.fellesforbundet.no/aktuelt/nyheter/2026/fantastisk-gode-nyheter-for-norske-arbeidsplasser/",
       "published": "08.01.2026",
-      "summary": "Equinor tildelte torsdag rammeavtaler for 100 milliarder kroner til leverand\u00f8rindustrien. \u2013 Dette sikrer tusenvis av arbeidsplasser langs hele kysten, jubler Fellesforbundets leder Christian Justnes."
+      "publishedAt": "2026-01-08T00:00:00+00:00",
+      "summary": "Equinor tildelte torsdag rammeavtaler for 100 milliarder kroner til leverand\u00f8rindustrien. \u2013 Dette sikrer tusenvis av arbeidsplasser langs hele kysten, jubler Fellesforbundets leder Christian Justnes.",
+      "sourceName": "Fellesforbundet",
+      "sourceUrl": "https://www.fellesforbundet.no/aktuelt/nyheter/"
     },
     {
       "title": "Disse bedriftene fikk tariffavtale i desember",
       "url": "https://www.fellesforbundet.no/aktuelt/nyheter/2026/disse-bedriftene-fikk-tariffavtale-i-desember/",
       "published": "05.01.2026",
-      "summary": "I l\u00f8pet av desember fikk hele 20 nye bedrifter tariffavtale med Fellesforbundet. Se oversikten over de nye tariffbedriftene her."
+      "publishedAt": "2026-01-05T00:00:00+00:00",
+      "summary": "I l\u00f8pet av desember fikk hele 20 nye bedrifter tariffavtale med Fellesforbundet. Se oversikten over de nye tariffbedriftene her.",
+      "sourceName": "Fellesforbundet",
+      "sourceUrl": "https://www.fellesforbundet.no/aktuelt/nyheter/"
     },
     {
       "title": "Forn\u00f8yde med at retten legger v\u00e5rt syn til grunn",
       "url": "https://www.fellesforbundet.no/aktuelt/nyheter/2025/fornoyde-med-at-retten-legger-vart-syn-til-grunn/",
       "published": "23.12.2025",
-      "summary": "S\u00f8ksm\u00e5let mot Fellesforbundet i Oslo tingrett vant ikke fram."
+      "publishedAt": "2025-12-23T00:00:00+00:00",
+      "summary": "S\u00f8ksm\u00e5let mot Fellesforbundet i Oslo tingrett vant ikke fram.",
+      "sourceName": "Fellesforbundet",
+      "sourceUrl": "https://www.fellesforbundet.no/aktuelt/nyheter/"
     },
     {
       "title": "\u2013 Vi trenger flere kvinner i byggen\u00e6ringen",
       "url": "https://www.fellesforbundet.no/aktuelt/nyheter/2025/-vi-trenger-flere-kvinner-i-byggenaringen/",
       "published": "18.12.2025",
-      "summary": "Fellesforbundet og NHO Byggen\u00e6ringen lanserer et prosjekt for \u00e5 styrke rekrutteringen av kvinnelige h\u00e5ndverkere i byggen\u00e6ringen. "
+      "publishedAt": "2025-12-18T00:00:00+00:00",
+      "summary": "Fellesforbundet og NHO Byggen\u00e6ringen lanserer et prosjekt for \u00e5 styrke rekrutteringen av kvinnelige h\u00e5ndverkere i byggen\u00e6ringen. ",
+      "sourceName": "Fellesforbundet",
+      "sourceUrl": "https://www.fellesforbundet.no/aktuelt/nyheter/"
     }
   ]
 }
