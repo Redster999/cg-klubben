@@ -1,9 +1,12 @@
 const NEWS_LIST_ID = "aktuelt-list";
 const COURSES_LIST_ID = "kurs-list";
+const FRONTPAGE_WALL_LIST_ID = "frontpage-wall-list";
 const NEWS_JSON_PATH = "data/news.json";
 const COURSES_JSON_PATH = "data/events.json";
+const FRONTPAGE_WALL_PATH = "/api/wall/frontpage";
 const MAX_NEWS_ITEMS = 10;
 const MAX_COURSE_ITEMS = 6;
+const MAX_FRONTPAGE_WALL_ITEMS = 8;
 
 function createStatusItem(message) {
   const li = document.createElement("li");
@@ -112,6 +115,41 @@ function renderCourses(listElement, payload) {
   setListItems(listElement, rendered);
 }
 
+function renderFrontpageWall(listElement, payload) {
+  const items = (payload && payload.items ? payload.items : []).slice(0, MAX_FRONTPAGE_WALL_ITEMS);
+
+  if (!items.length) {
+    setListItems(listElement, [createStatusItem("Ingen forsideinnlegg enda.")]);
+    return;
+  }
+
+  const rendered = items.map((item) => {
+    const li = document.createElement("li");
+    const title = document.createElement("strong");
+    const body = document.createElement("p");
+    const meta = document.createElement("span");
+
+    title.className = "feed-link";
+    title.textContent = item.title;
+
+    body.className = "feed-item-meta";
+    body.textContent = item.body;
+
+    const createdAt = item.createdAt ? formatEventDate(item.createdAt) : "";
+    meta.className = "feed-item-meta";
+    meta.textContent = createdAt ? `Publisert ${createdAt}` : "";
+
+    li.appendChild(title);
+    li.appendChild(body);
+    if (meta.textContent) {
+      li.appendChild(meta);
+    }
+    return li;
+  });
+
+  setListItems(listElement, rendered);
+}
+
 async function loadJson(path) {
   const response = await fetch(path, { cache: "no-store" });
   if (!response.ok) {
@@ -124,6 +162,7 @@ async function loadJson(path) {
 async function initFeeds() {
   const newsList = document.getElementById(NEWS_LIST_ID);
   const courseList = document.getElementById(COURSES_LIST_ID);
+  const wallList = document.getElementById(FRONTPAGE_WALL_LIST_ID);
 
   if (!newsList || !courseList) {
     return;
@@ -141,6 +180,16 @@ async function initFeeds() {
     console.error(error);
     setListItems(newsList, [createStatusItem("Kunne ikke laste nyheter na.")]);
     setListItems(courseList, [createStatusItem("Kunne ikke laste kurs na.")]);
+  }
+
+  if (wallList) {
+    try {
+      const wallPayload = await loadJson(FRONTPAGE_WALL_PATH);
+      renderFrontpageWall(wallList, wallPayload);
+    } catch (error) {
+      console.error(error);
+      setListItems(wallList, [createStatusItem("Kunne ikke laste veggen na.")]);
+    }
   }
 }
 

@@ -240,6 +240,11 @@ body {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+.auth-single {
+  grid-template-columns: minmax(0, 700px);
+  justify-content: center;
+}
+
 .auth-card p {
   font-family: "Libre Franklin", Arial, sans-serif;
   font-size: 18px;
@@ -302,7 +307,46 @@ body {
 }
 
 .wall-card {
-  max-width: 980px;
+  max-width: none;
+}
+
+.wall-layout {
+  align-items: start;
+  display: grid;
+  gap: 24px;
+  grid-template-columns: minmax(0, 1fr) 300px;
+}
+
+.online-card {
+  min-height: auto;
+}
+
+.online-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.online-item {
+  border-bottom: 1px solid var(--line);
+  font-family: "Libre Franklin", Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 6px 0;
+}
+
+.online-item:last-child {
+  border-bottom: 0;
+}
+
+.wall-frontpage-toggle {
+  align-items: center;
+  display: inline-flex;
+  font-family: "Libre Franklin", Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  gap: 8px;
+  margin-top: 10px;
 }
 
 .member-user {
@@ -399,6 +443,13 @@ body {
 .member-table-wrap {
   margin-top: 16px;
   overflow-x: auto;
+}
+
+.member-count {
+  color: var(--muted);
+  font-family: "Libre Franklin", Arial, sans-serif;
+  font-size: 14px;
+  margin: 12px 0 0;
 }
 
 .member-table {
@@ -521,6 +572,10 @@ body {
   }
 
   .auth-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .wall-layout {
     grid-template-columns: 1fr;
   }
 }

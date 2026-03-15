@@ -1,6 +1,7 @@
 const {
   badRequest,
   forbidden,
+  getQueryParams,
   isSameOrigin,
   methodNotAllowed,
   parseJsonBody,
@@ -22,8 +23,8 @@ function requireAuthenticated(req, res) {
 }
 
 module.exports = async function handler(req, res) {
-  if (!['GET', 'POST'].includes(req.method)) {
-    return methodNotAllowed(res, ['GET', 'POST']);
+  if (!['GET', 'POST', 'PATCH'].includes(req.method)) {
+    return methodNotAllowed(res, ['GET', 'POST', 'PATCH']);
   }
 
   if (req.method === 'GET') {
@@ -39,6 +40,7 @@ module.exports = async function handler(req, res) {
                 body,
                 author_name AS "authorName",
                 author_role AS "authorRole",
+                show_on_frontpage AS "showOnFrontpage",
                 created_at AS "createdAt"
          FROM wall_posts
          ORDER BY created_at DESC
@@ -64,10 +66,51 @@ module.exports = async function handler(req, res) {
     return;
   }
 
+  if (req.method === 'PATCH') {
+    if (session.role !== 'styret') {
+      return forbidden(res, 'Kun styret kan endre forside-visning');
+    }
+
+    try {
+      const params = getQueryParams(req);
+      const id = Number(params.get('id'));
+      const body = await parseJsonBody(req);
+      const showOnFrontpage = Boolean(body.showOnFrontpage);
+
+      if (!Number.isInteger(id) || id <= 0) {
+        return badRequest(res, 'Gyldig innlegg-id må sendes med');
+      }
+
+      const result = await query(
+        `UPDATE wall_posts
+         SET show_on_frontpage = $2
+         WHERE id = $1
+         RETURNING id,
+                   title,
+                   body,
+                   author_name AS "authorName",
+                   author_role AS "authorRole",
+                   show_on_frontpage AS "showOnFrontpage",
+                   created_at AS "createdAt"`,
+        [id, showOnFrontpage]
+      );
+
+      if (!result.rows[0]) {
+        return badRequest(res, 'Fant ikke innlegget');
+      }
+
+      return sendJson(res, 200, { item: result.rows[0] });
+    } catch (error) {
+      console.error('wall patch error', error);
+      return serverError(res);
+    }
+  }
+
   try {
     const body = await parseJsonBody(req);
     const title = String(body.title || '').trim();
     const message = String(body.message || '').trim();
+    const showOnFrontpage = session.role === 'styret' && Boolean(body.showOnFrontpage);
 
     if (!title || !message) {
       return badRequest(res, 'Tittel og melding er påkrevd');
@@ -78,15 +121,16 @@ module.exports = async function handler(req, res) {
     }
 
     const result = await query(
-      `INSERT INTO wall_posts (title, body, author_name, author_role)
-       VALUES ($1, $2, $3, $4)
+      `INSERT INTO wall_posts (title, body, author_name, author_role, show_on_frontpage)
+       VALUES ($1, $2, $3, $4, $5)
        RETURNING id,
                  title,
                  body,
                  author_name AS "authorName",
                  author_role AS "authorRole",
+                 show_on_frontpage AS "showOnFrontpage",
                  created_at AS "createdAt"`,
-      [title, message, session.name || 'Medlem', session.role]
+      [title, message, session.name || 'Medlem', session.role, showOnFrontpage]
     );
 
     return sendJson(res, 201, { item: result.rows[0] });

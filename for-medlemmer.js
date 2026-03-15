@@ -1,3 +1,6 @@
+let currentUser = null;
+let presenceIntervalId = null;
+
 function setStatus(message, isError = false) {
   const element = document.getElementById('auth-status');
   if (!element) {
@@ -26,11 +29,28 @@ async function apiFetch(path, options = {}) {
   }
 
   if (!response.ok) {
-    const errorMessage = payload.error || 'Noe gikk galt';
-    throw new Error(errorMessage);
+    throw new Error(payload.error || 'Noe gikk galt');
   }
 
   return payload;
+}
+
+function formatTimestamp(value) {
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) {
+    return '';
+  }
+
+  return date.toLocaleString('nb-NO');
+}
+
+async function updateWallFrontpage(id, enabled) {
+  await apiFetch(`/api/wall/posts?id=${id}`, {
+    method: 'PATCH',
+    body: JSON.stringify({
+      showOnFrontpage: enabled,
+    }),
+  });
 }
 
 function wallItemTemplate(item) {
@@ -44,14 +64,40 @@ function wallItemTemplate(item) {
   body.textContent = item.body;
 
   const meta = document.createElement('span');
-  const source = item.authorRole === 'styret' ? 'Styret' : item.authorName;
-  const timestamp = new Date(item.createdAt).toLocaleString('nb-NO');
+  const authorLabel = item.authorName || (item.authorRole === 'styret' ? 'Styret' : 'Medlem');
   meta.className = 'wall-meta';
-  meta.textContent = `${source} - ${timestamp}`;
+  meta.textContent = `${authorLabel} - ${formatTimestamp(item.createdAt)}`;
 
   li.appendChild(title);
   li.appendChild(body);
   li.appendChild(meta);
+
+  if (currentUser && currentUser.role === 'styret') {
+    const toggleRow = document.createElement('label');
+    toggleRow.className = 'wall-frontpage-toggle';
+
+    const toggle = document.createElement('input');
+    toggle.type = 'checkbox';
+    toggle.checked = Boolean(item.showOnFrontpage);
+    toggle.addEventListener('change', async () => {
+      try {
+        await updateWallFrontpage(item.id, toggle.checked);
+        setStatus('Forside-visning oppdatert.');
+        await loadWall();
+      } catch (error) {
+        setStatus(error.message, true);
+        toggle.checked = !toggle.checked;
+      }
+    });
+
+    const text = document.createElement('span');
+    text.textContent = 'Forside';
+
+    toggleRow.appendChild(toggle);
+    toggleRow.appendChild(text);
+    li.appendChild(toggleRow);
+  }
+
   return li;
 }
 
@@ -76,28 +122,94 @@ function renderWall(items) {
   }
 }
 
+function renderOnline(users) {
+  const list = document.getElementById('online-list');
+  if (!list) {
+    return;
+  }
+
+  list.textContent = '';
+
+  if (!users.length) {
+    const li = document.createElement('li');
+    li.className = 'feed-status';
+    li.textContent = 'Ingen online akkurat nå.';
+    list.appendChild(li);
+    return;
+  }
+
+  users.forEach((user) => {
+    const li = document.createElement('li');
+    li.className = 'online-item';
+    li.textContent = user.name;
+    list.appendChild(li);
+  });
+}
+
+function stopPresenceUpdates() {
+  if (presenceIntervalId) {
+    clearInterval(presenceIntervalId);
+    presenceIntervalId = null;
+  }
+}
+
+async function loadOnline() {
+  const payload = await apiFetch('/api/auth/presence', { method: 'GET' });
+  renderOnline(payload.items || []);
+}
+
+function startPresenceUpdates() {
+  stopPresenceUpdates();
+  presenceIntervalId = setInterval(async () => {
+    try {
+      await loadOnline();
+    } catch (error) {
+      if (String(error.message || '').includes('logget inn')) {
+        stopPresenceUpdates();
+        renderOnline([]);
+        return;
+      }
+      setStatus(error.message, true);
+    }
+  }, 45000);
+}
+
 function updateViewForUser(user) {
   const authGateway = document.getElementById('auth-gateway');
   const memberApp = document.getElementById('member-app');
   const userLabel = document.getElementById('member-user-label');
   const adminFab = document.getElementById('admin-fab');
+  const frontpageRow = document.getElementById('wall-frontpage-row');
+  const frontpageInput = document.getElementById('wall-frontpage');
 
-  if (!authGateway || !memberApp || !userLabel || !adminFab) {
+  if (!authGateway || !memberApp || !userLabel || !adminFab || !frontpageRow || !frontpageInput) {
     return;
   }
 
   if (!user || !user.authenticated) {
+    currentUser = null;
     authGateway.hidden = false;
     memberApp.hidden = true;
     userLabel.textContent = '';
     adminFab.hidden = true;
+    frontpageRow.hidden = true;
+    frontpageInput.checked = false;
+    stopPresenceUpdates();
+    renderOnline([]);
     return;
   }
 
+  currentUser = user;
   authGateway.hidden = true;
   memberApp.hidden = false;
   userLabel.textContent = `Innlogget som ${user.name} (${user.role === 'styret' ? 'styret' : 'medlem'})`;
   adminFab.hidden = user.role !== 'styret';
+  frontpageRow.hidden = user.role !== 'styret';
+  if (user.role !== 'styret') {
+    frontpageInput.checked = false;
+  }
+
+  startPresenceUpdates();
 }
 
 async function loadWall() {
@@ -110,17 +222,17 @@ async function refreshUserAndData() {
   updateViewForUser(user);
 
   if (user.authenticated) {
-    await loadWall();
+    await Promise.all([loadWall(), loadOnline()]);
   }
 }
 
-async function handleMemberLogin(event) {
+async function handleLogin(event) {
   event.preventDefault();
-  const usernameInput = document.getElementById('member-username');
-  const passwordInput = document.getElementById('member-password');
+  const usernameInput = document.getElementById('login-username');
+  const passwordInput = document.getElementById('login-password');
 
   try {
-    setStatus('Logger inn medlem...');
+    setStatus('Logger inn...');
     await apiFetch('/api/auth/member-login', {
       method: 'POST',
       body: JSON.stringify({
@@ -135,35 +247,7 @@ async function handleMemberLogin(event) {
       await refreshUserAndData();
       setStatus('Innlogging vellykket.');
     } catch (error) {
-      setStatus('Innlogging vellykket, men veggen kunne ikke lastes. Sjekk DATABASE_URL i Vercel.', true);
-    }
-  } catch (error) {
-    setStatus(error.message, true);
-  }
-}
-
-async function handleStyretLogin(event) {
-  event.preventDefault();
-  const userInput = document.getElementById('styret-user');
-  const passInput = document.getElementById('styret-pass');
-
-  try {
-    setStatus('Logger inn styret...');
-    await apiFetch('/api/auth/styret-login', {
-      method: 'POST',
-      body: JSON.stringify({
-        username: userInput.value,
-        password: passInput.value,
-      }),
-    });
-
-    userInput.value = '';
-    passInput.value = '';
-    try {
-      await refreshUserAndData();
-      setStatus('Styret er logget inn.');
-    } catch (error) {
-      setStatus('Styret er logget inn, men veggen kunne ikke lastes. Sjekk DATABASE_URL i Vercel.', true);
+      setStatus('Innlogging vellykket, men noen data kunne ikke lastes.', true);
     }
   } catch (error) {
     setStatus(error.message, true);
@@ -174,6 +258,7 @@ async function handleWallSubmit(event) {
   event.preventDefault();
   const titleInput = document.getElementById('wall-title');
   const messageInput = document.getElementById('wall-message');
+  const frontpageInput = document.getElementById('wall-frontpage');
 
   try {
     await apiFetch('/api/wall/posts', {
@@ -181,11 +266,15 @@ async function handleWallSubmit(event) {
       body: JSON.stringify({
         title: titleInput.value,
         message: messageInput.value,
+        showOnFrontpage: currentUser && currentUser.role === 'styret' ? frontpageInput.checked : false,
       }),
     });
 
     titleInput.value = '';
     messageInput.value = '';
+    if (frontpageInput) {
+      frontpageInput.checked = false;
+    }
     setStatus('Innlegget ble publisert.');
     await loadWall();
   } catch (error) {
@@ -200,6 +289,7 @@ async function handleLogout() {
       body: JSON.stringify({}),
     });
 
+    stopPresenceUpdates();
     setStatus('Logget ut.');
     updateViewForUser(null);
     renderWall([]);
@@ -209,8 +299,7 @@ async function handleLogout() {
 }
 
 document.addEventListener('DOMContentLoaded', async () => {
-  document.getElementById('member-login-form')?.addEventListener('submit', handleMemberLogin);
-  document.getElementById('styret-login-form')?.addEventListener('submit', handleStyretLogin);
+  document.getElementById('login-form')?.addEventListener('submit', handleLogin);
   document.getElementById('wall-form')?.addEventListener('submit', handleWallSubmit);
   document.getElementById('logout-button')?.addEventListener('click', handleLogout);
 

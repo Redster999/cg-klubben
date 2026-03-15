@@ -53,7 +53,22 @@ async function ensureSchema() {
         body TEXT NOT NULL,
         author_name TEXT NOT NULL,
         author_role TEXT NOT NULL CHECK (author_role IN ('styret', 'member')),
+        show_on_frontpage BOOLEAN NOT NULL DEFAULT FALSE,
         created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+      );
+    `);
+
+    await client.query(`
+      ALTER TABLE wall_posts
+      ADD COLUMN IF NOT EXISTS show_on_frontpage BOOLEAN NOT NULL DEFAULT FALSE;
+    `);
+
+    await client.query(`
+      CREATE TABLE IF NOT EXISTS online_presence (
+        session_nonce TEXT PRIMARY KEY,
+        user_name TEXT NOT NULL,
+        user_role TEXT NOT NULL CHECK (user_role IN ('styret', 'member')),
+        last_seen TIMESTAMPTZ NOT NULL DEFAULT NOW()
       );
     `);
 

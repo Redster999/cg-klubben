@@ -43,88 +43,75 @@
         >HYTTER TJØMSVÅGEN</a
       >
       <a href="#">OM KLUBBEN</a>
-      <a href="#">FORSIKRINGER</a>
+      <a href="#">RETTIGHETER OG FORSIKRING</a>
       <a class="members-link" href="for-medlemmer.html">FOR MEDLEMMER</a>
     </nav>
 
     <main class="content members-content">
-      <section id="auth-gateway" class="auth-grid" aria-label="Innlogging">
+      <section id="auth-gateway" class="auth-grid auth-single" aria-label="Innlogging">
         <article class="welcome-card auth-card">
-          <h3>Logg inn som medlem</h3>
-          <form id="member-login-form" class="auth-form" autocomplete="off" novalidate>
-            <label for="member-username">Brukernavn</label>
+          <h3>Logg inn</h3>
+          <form id="login-form" class="auth-form" autocomplete="off" novalidate>
+            <label for="login-username">Bruker</label>
             <input
-              id="member-username"
-              name="member_username_code"
+              id="login-username"
+              name="login_username_code"
               type="text"
               autocomplete="off"
               spellcheck="false"
               required
             />
 
-            <label for="member-password">Passord</label>
+            <label for="login-password">Passord</label>
             <input
-              id="member-password"
-              name="member_password_code"
+              id="login-password"
+              name="login_password_code"
               type="password"
               autocomplete="new-password"
               spellcheck="false"
               required
             />
 
-            <button type="submit" class="action-btn">Logg inn medlem</button>
-          </form>
-        </article>
-
-        <article class="welcome-card auth-card">
-          <h3>Logg inn som styret</h3>
-          <form id="styret-login-form" class="auth-form" autocomplete="off" novalidate>
-            <label for="styret-user">Brukernavn</label>
-            <input
-              id="styret-user"
-              name="board_user_code"
-              type="text"
-              autocomplete="off"
-              spellcheck="false"
-              required
-            />
-
-            <label for="styret-pass">Passord</label>
-            <input
-              id="styret-pass"
-              name="board_pass_code"
-              type="password"
-              autocomplete="new-password"
-              spellcheck="false"
-              required
-            />
-
-            <button type="submit" class="action-btn">Logg inn styret</button>
+            <button type="submit" class="action-btn">Logg inn</button>
           </form>
         </article>
       </section>
 
       <section id="member-app" class="member-app" hidden>
-        <article class="welcome-card wall-card">
-          <h3>Veggen</h3>
-          <p class="member-user" id="member-user-label"></p>
+        <div class="wall-layout">
+          <article class="welcome-card wall-card">
+            <h3>Veggen</h3>
+            <p class="member-user" id="member-user-label"></p>
 
-          <form id="wall-form" class="wall-form" autocomplete="off" novalidate>
-            <label for="wall-title">Tittel</label>
-            <input id="wall-title" type="text" maxlength="120" required />
+            <form id="wall-form" class="wall-form" autocomplete="off" novalidate>
+              <label for="wall-title">Tittel</label>
+              <input id="wall-title" type="text" maxlength="120" required />
 
-            <label for="wall-message">Melding</label>
-            <textarea id="wall-message" rows="4" maxlength="4000" required></textarea>
+              <label for="wall-message">Melding</label>
+              <textarea id="wall-message" rows="4" maxlength="4000" required></textarea>
 
-            <button type="submit" class="action-btn">Publiser på veggen</button>
-          </form>
+              <label id="wall-frontpage-row" class="check-row" for="wall-frontpage" hidden>
+                <input id="wall-frontpage" type="checkbox" />
+                Forside
+              </label>
 
-          <ul id="wall-list" class="wall-list">
-            <li class="feed-status">Laster veggen...</li>
-          </ul>
+              <button type="submit" class="action-btn">Publiser på veggen</button>
+            </form>
 
-          <button id="logout-button" type="button" class="secondary-btn">Logg ut</button>
-        </article>
+            <ul id="wall-list" class="wall-list">
+              <li class="feed-status">Laster veggen...</li>
+            </ul>
+
+            <button id="logout-button" type="button" class="secondary-btn">Logg ut</button>
+          </article>
+
+          <aside class="welcome-card online-card">
+            <h3>Online</h3>
+            <ul id="online-list" class="online-list">
+              <li class="feed-status">Ingen online akkurat nå.</li>
+            </ul>
+          </aside>
+        </div>
       </section>
 
       <p id="auth-status" class="status-msg" role="status" aria-live="polite"></p>

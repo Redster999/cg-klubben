@@ -254,6 +254,7 @@ function memberRowTemplate(member) {
 
 async function loadMembers() {
   const body = document.getElementById('member-table-body');
+  const countElement = document.getElementById('member-count');
   if (!body) {
     return;
   }
@@ -261,6 +262,9 @@ async function loadMembers() {
   const payload = await apiFetch('/api/admin/members', { method: 'GET' });
   const members = payload.items || [];
   body.textContent = '';
+  if (countElement) {
+    countElement.textContent = `Antall medlemmer: ${members.length}`;
+  }
 
   if (!members.length) {
     const tr = document.createElement('tr');
