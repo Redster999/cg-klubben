@@ -32,6 +32,123 @@ async function apiFetch(path, options = {}) {
   return payload;
 }
 
+function splitCsvLine(line, delimiter) {
+  const cells = [];
+  let current = '';
+  let inQuotes = false;
+
+  for (let index = 0; index < line.length; index += 1) {
+    const char = line[index];
+
+    if (char === '"') {
+      const nextChar = line[index + 1];
+      if (inQuotes && nextChar === '"') {
+        current += '"';
+        index += 1;
+        continue;
+      }
+
+      inQuotes = !inQuotes;
+      continue;
+    }
+
+    if (char === delimiter && !inQuotes) {
+      cells.push(current.trim());
+      current = '';
+      continue;
+    }
+
+    current += char;
+  }
+
+  cells.push(current.trim());
+  return cells;
+}
+
+function parseCsvText(text) {
+  const normalized = String(text || '')
+    .replace(/\r\n/g, '\n')
+    .replace(/\r/g, '\n')
+    .trim();
+
+  if (!normalized) {
+    throw new Error('CSV-filen er tom.');
+  }
+
+  const lines = normalized.split('\n').filter((line) => line.trim().length > 0);
+  const firstLine = lines[0] || '';
+  const semicolonCount = (firstLine.match(/;/g) || []).length;
+  const commaCount = (firstLine.match(/,/g) || []).length;
+  const delimiter = semicolonCount >= commaCount ? ';' : ',';
+
+  return lines.map((line) => splitCsvLine(line, delimiter));
+}
+
+function normalizeHeader(value) {
+  return String(value || '')
+    .replace(/^\uFEFF/, '')
+    .trim()
+    .toLowerCase()
+    .replace(/\s+/g, ' ')
+    .replace(/_/g, '-');
+}
+
+function resolveColumnIndex(headers, aliases) {
+  for (let index = 0; index < headers.length; index += 1) {
+    if (aliases.includes(headers[index])) {
+      return index;
+    }
+  }
+
+  return -1;
+}
+
+function csvRowsToMembers(rows) {
+  if (rows.length < 2) {
+    throw new Error('CSV-filen må inneholde overskrift og minst én rad.');
+  }
+
+  const headers = rows[0].map(normalizeHeader);
+  const nameIndex = resolveColumnIndex(headers, ['navn', 'name', 'fullt navn']);
+  const firstNameIndex = resolveColumnIndex(headers, ['fornavn', 'first name']);
+  const lastNameIndex = resolveColumnIndex(headers, ['etternavn', 'last name', 'surname']);
+  const emailIndex = resolveColumnIndex(headers, ['e-post', 'epost', 'email', 'e-mail']);
+  const phoneIndex = resolveColumnIndex(headers, ['telefonnummer', 'telefon', 'mobil', 'phone']);
+  const employeeIndex = resolveColumnIndex(headers, ['ansattnummer', 'ansatt nr', 'ansattnr', 'employee number', 'employee-number']);
+
+  if (emailIndex === -1 || phoneIndex === -1 || employeeIndex === -1) {
+    throw new Error('Fant ikke nødvendige kolonner i CSV. Trenger navn, epost, telefonnummer og ansattnummer.');
+  }
+
+  if (nameIndex === -1 && (firstNameIndex === -1 || lastNameIndex === -1)) {
+    throw new Error('Fant ikke navn-kolonner. Bruk enten "Navn" eller "Fornavn" + "Etternavn".');
+  }
+
+  const members = [];
+  for (let rowIndex = 1; rowIndex < rows.length; rowIndex += 1) {
+    const row = rows[rowIndex];
+    const firstName = firstNameIndex === -1 ? '' : String(row[firstNameIndex] || '').trim();
+    const lastName = lastNameIndex === -1 ? '' : String(row[lastNameIndex] || '').trim();
+    const fullName = nameIndex === -1 ? '' : String(row[nameIndex] || '').trim();
+    const name = fullName || [firstName, lastName].filter(Boolean).join(' ').trim();
+    const email = String(row[emailIndex] || '').trim();
+    const phone = String(row[phoneIndex] || '').trim();
+    const employeeNumber = String(row[employeeIndex] || '').trim();
+
+    if (!name && !email && !phone && !employeeNumber) {
+      continue;
+    }
+
+    if (!name || !email || !phone || !employeeNumber) {
+      throw new Error(`Ufullstendig data på rad ${rowIndex + 1}.`);
+    }
+
+    members.push({ name, email, phone, employeeNumber });
+  }
+
+  return members;
+}
+
 function memberRowTemplate(member) {
   const tr = document.createElement('tr');
 
@@ -153,6 +270,64 @@ async function handleMemberCreate(event) {
   }
 }
 
+async function handleMemberCsvImport() {
+  const fileInput = document.getElementById('member-csv-file');
+  const importButton = document.getElementById('member-import-button');
+  const file = fileInput?.files?.[0];
+
+  if (!file) {
+    setStatus('Velg en CSV-fil før import.', true);
+    return;
+  }
+
+  if (importButton) {
+    importButton.disabled = true;
+  }
+
+  try {
+    setStatus('Leser CSV-fil...');
+    const csvText = await file.text();
+    const rows = parseCsvText(csvText);
+    const members = csvRowsToMembers(rows);
+
+    if (!members.length) {
+      throw new Error('Fant ingen medlemmer å importere.');
+    }
+
+    setStatus(`Importerer ${members.length} medlemmer...`);
+
+    let imported = 0;
+    let duplicates = 0;
+    let failed = 0;
+
+    for (const member of members) {
+      try {
+        await apiFetch('/api/admin/members', {
+          method: 'POST',
+          body: JSON.stringify(member),
+        });
+        imported += 1;
+      } catch (error) {
+        const message = String(error.message || '');
+        if (message.includes('finnes allerede')) {
+          duplicates += 1;
+        } else {
+          failed += 1;
+        }
+      }
+    }
+
+    await loadMembers();
+    setStatus(`Import ferdig: ${imported} lagt til, ${duplicates} duplikater, ${failed} feilet.`, failed > 0);
+  } catch (error) {
+    setStatus(error.message, true);
+  } finally {
+    if (importButton) {
+      importButton.disabled = false;
+    }
+  }
+}
+
 async function handleLogout() {
   try {
     await apiFetch('/api/auth/logout', {
@@ -169,6 +344,7 @@ async function handleLogout() {
 document.addEventListener('DOMContentLoaded', async () => {
   document.getElementById('settings-form')?.addEventListener('submit', handleSettingsSave);
   document.getElementById('member-create-form')?.addEventListener('submit', handleMemberCreate);
+  document.getElementById('member-import-button')?.addEventListener('click', handleMemberCsvImport);
   document.getElementById('logout-all')?.addEventListener('click', handleLogout);
 
   try {

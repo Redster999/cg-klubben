@@ -50,6 +50,11 @@
             <input id="member-employee-admin" type="text" required />
 
             <button type="submit" class="action-btn">Legg til medlem</button>
+
+            <label for="member-csv-file">Importer medlemmer fra CSV</label>
+            <input id="member-csv-file" type="file" accept=".csv,text/csv" />
+            <button id="member-import-button" type="button" class="secondary-btn">Importer CSV</button>
+            <p class="feed-status">Bruk fil med kolonner for navn, epost, telefonnummer og ansattnummer.</p>
           </form>
 
           <div class="member-table-wrap">
