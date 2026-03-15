@@ -33,7 +33,8 @@ module.exports = async function handler(req, res) {
   } catch (error) {
     console.error('styret-elevated-login error', error);
     if (error && typeof error.message === 'string' && error.message.startsWith('Missing required environment variable:')) {
-      return serverError(res, 'Serverkonfigurasjon mangler. Sjekk BOARD_PASSWORD og SESSION_SECRET i Vercel.');
+      const missingName = error.message.split(':').slice(1).join(':').trim();
+      return serverError(res, `Serverkonfigurasjon mangler: ${missingName}`);
     }
     return serverError(res);
   }
