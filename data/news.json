@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-16T03:42:36.397087+00:00",
+  "generatedAt": "2026-03-16T07:54:01.384875+00:00",
   "sources": [
     {
       "name": "Fellesforbundet",
@@ -12,6 +12,15 @@
   ],
   "totalHits": 120,
   "items": [
+    {
+      "title": "L\u00f8nnsfest p\u00e5 toppen. Se hvor mye de tjener",
+      "url": "https://frifagbevegelse.no/nyheter/lonnsfest-pa-toppen-se-hvor-mye-de-tjener-6.158.1199487.8ecb046ab2",
+      "published": "16.03.2026",
+      "publishedAt": "2026-03-16T00:00:00+00:00",
+      "summary": "Folk flest fikk sm\u00e5penger sammenlignet med direkt\u00f8rene i 2025.",
+      "sourceName": "FriFagbevegelse",
+      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
+    },
     {
       "title": "Kommunen snur etter kritikk: F\u00e5r bruke torget p\u00e5 1. mai",
       "url": "https://frifagbevegelse.no/magasinet-for-fagorganiserte/kommunen-snur-etter-kritikk-far-bruke-torget-pa-1-mai-6.158.1199232.9ddfeb5dab",
@@ -956,15 +965,6 @@
       "summary": "NHOs kompetansebarometer for 2025 sl\u00e5r fast at 6 av 10 norske bedrifter har et udekket kompetansebehov og at ettersp\u00f8rselen etter kvalifiserte fagarbeidere er s\u00e6rlig h\u00f8y innen teknologi- og industrifag, elektro, samt bygg og anlegg.",
       "sourceName": "Fellesforbundet",
       "sourceUrl": "https://www.fellesforbundet.no/aktuelt/nyheter/"
-    },
-    {
-      "title": "Gir ikke opp kampen om posttjenester for eldre",
-      "url": "https://frifagbevegelse.no/nyheter/gir-ikke-opp-kampen-om-posttjenester-for-eldre-6.158.1196094.5d6a1a1d93",
-      "published": "03.03.2026",
-      "publishedAt": "2026-03-03T00:00:00+00:00",
-      "summary": "AUF og Fagforbundet vil kjempe for at det skal innf\u00f8res et d\u00f8rterskeltilbud som et pr\u00f8veprosjekt over tre \u00e5r.",
-      "sourceName": "FriFagbevegelse",
-      "sourceUrl": "https://frifagbevegelse.no/magasinet-for-fagorganiserte-6.222.1167.4e909464d4"
     },
     {
       "title": "Tap mot Wolt i Lagmannsretten",
