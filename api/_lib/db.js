@@ -76,6 +76,36 @@ async function ensureSchema() {
     `);
 
     await client.query(`
+      ALTER TABLE wall_posts
+      ADD COLUMN IF NOT EXISTS author_member_id BIGINT;
+    `);
+
+    await client.query(`
+      ALTER TABLE wall_posts
+      ADD COLUMN IF NOT EXISTS target_member_id BIGINT;
+    `);
+
+    await client.query(`
+      ALTER TABLE wall_posts
+      ADD COLUMN IF NOT EXISTS notification_sent_at TIMESTAMPTZ;
+    `);
+
+    await client.query(`
+      ALTER TABLE wall_posts
+      ADD COLUMN IF NOT EXISTS responded_at TIMESTAMPTZ;
+    `);
+
+    await client.query(`
+      ALTER TABLE wall_posts
+      ADD COLUMN IF NOT EXISTS responded_by_member_id BIGINT;
+    `);
+
+    await client.query(`
+      ALTER TABLE wall_posts
+      ADD COLUMN IF NOT EXISTS responded_by_name TEXT;
+    `);
+
+    await client.query(`
       CREATE TABLE IF NOT EXISTS online_presence (
         session_nonce TEXT PRIMARY KEY,
         user_name TEXT NOT NULL,

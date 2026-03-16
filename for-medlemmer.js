@@ -60,6 +60,47 @@ async function deleteWallPost(id) {
   });
 }
 
+async function sendWallReply(id) {
+  return apiFetch('/api/wall/reply', {
+    method: 'POST',
+    body: JSON.stringify({ postId: id }),
+  });
+}
+
+function resetTargetMembers() {
+  const targetInput = document.getElementById('wall-target-member');
+  if (!targetInput) {
+    return;
+  }
+
+  targetInput.textContent = '';
+  const option = document.createElement('option');
+  option.value = '';
+  option.textContent = 'Ingen målrettet varsel';
+  targetInput.appendChild(option);
+}
+
+function renderTargetMembers(items) {
+  const targetInput = document.getElementById('wall-target-member');
+  if (!targetInput) {
+    return;
+  }
+
+  resetTargetMembers();
+
+  for (const item of items) {
+    const option = document.createElement('option');
+    option.value = String(item.id);
+    option.textContent = item.name;
+    targetInput.appendChild(option);
+  }
+}
+
+async function loadTargetMembers() {
+  const payload = await apiFetch('/api/wall/recipients', { method: 'GET' });
+  renderTargetMembers(payload.items || []);
+}
+
 function wallItemTemplate(item) {
   const li = document.createElement('li');
   li.className = 'wall-item';
@@ -78,6 +119,59 @@ function wallItemTemplate(item) {
   li.appendChild(title);
   li.appendChild(body);
   li.appendChild(meta);
+
+  if (item.targetMemberId) {
+    const target = document.createElement('p');
+    target.className = 'wall-target';
+    target.textContent = item.targetMemberName
+      ? `Målrettet melding til: ${item.targetMemberName}`
+      : 'Målrettet melding til valgt medlem';
+    li.appendChild(target);
+
+    if (item.respondedAt) {
+      const responded = document.createElement('p');
+      responded.className = 'wall-reply-status';
+      const who = item.respondedByName ? `${item.respondedByName} har svart` : 'Meldingen er besvart';
+      responded.textContent = `${who} (${formatTimestamp(item.respondedAt)})`;
+      li.appendChild(responded);
+    } else {
+      const currentMemberId = currentUser ? Number(currentUser.memberId) : 0;
+      const targetMemberId = Number(item.targetMemberId);
+
+      if (Number.isInteger(currentMemberId) && currentMemberId > 0 && currentMemberId === targetMemberId) {
+        const replyButton = document.createElement('button');
+        replyButton.type = 'button';
+        replyButton.className = 'secondary-btn reply-btn';
+        replyButton.textContent = 'Svar';
+
+        replyButton.addEventListener('click', async () => {
+          replyButton.disabled = true;
+          replyButton.textContent = 'Sender...';
+
+          try {
+            const payload = await sendWallReply(item.id);
+            if (payload.warning) {
+              setStatus(`Svar registrert. ${payload.warning}`);
+            } else {
+              setStatus('Svar registrert.');
+            }
+            await loadWall();
+          } catch (error) {
+            setStatus(error.message, true);
+            replyButton.disabled = false;
+            replyButton.textContent = 'Svar';
+          }
+        });
+
+        li.appendChild(replyButton);
+      } else {
+        const replyInfo = document.createElement('p');
+        replyInfo.className = 'wall-reply-status';
+        replyInfo.textContent = 'Kun medlemmet som er tagget kan svare.';
+        li.appendChild(replyInfo);
+      }
+    }
+  }
 
   if (currentUser && currentUser.role === 'styret') {
     const actionsRow = document.createElement('div');
@@ -212,8 +306,9 @@ function updateViewForUser(user) {
   const adminFab = document.getElementById('admin-fab');
   const frontpageRow = document.getElementById('wall-frontpage-row');
   const frontpageInput = document.getElementById('wall-frontpage');
+  const targetRow = document.getElementById('wall-target-row');
 
-  if (!authGateway || !memberApp || !userLabel || !adminFab || !frontpageRow || !frontpageInput) {
+  if (!authGateway || !memberApp || !userLabel || !adminFab || !frontpageRow || !frontpageInput || !targetRow) {
     return;
   }
 
@@ -224,7 +319,9 @@ function updateViewForUser(user) {
     userLabel.textContent = '';
     adminFab.hidden = true;
     frontpageRow.hidden = true;
+    targetRow.hidden = true;
     frontpageInput.checked = false;
+    resetTargetMembers();
     stopPresenceUpdates();
     renderOnline([]);
     return;
@@ -236,8 +333,11 @@ function updateViewForUser(user) {
   userLabel.textContent = `Innlogget som ${user.name} (${user.role === 'styret' ? 'styret' : 'medlem'})`;
   adminFab.hidden = user.role !== 'styret';
   frontpageRow.hidden = user.role !== 'styret';
+  targetRow.hidden = user.role !== 'styret';
+
   if (user.role !== 'styret') {
     frontpageInput.checked = false;
+    resetTargetMembers();
   }
 
   startPresenceUpdates();
@@ -253,7 +353,11 @@ async function refreshUserAndData() {
   updateViewForUser(user);
 
   if (user.authenticated) {
-    await Promise.all([loadWall(), loadOnline()]);
+    const tasks = [loadWall(), loadOnline()];
+    if (user.role === 'styret') {
+      tasks.push(loadTargetMembers());
+    }
+    await Promise.all(tasks);
   }
 }
 
@@ -290,15 +394,25 @@ async function handleWallSubmit(event) {
   const titleInput = document.getElementById('wall-title');
   const messageInput = document.getElementById('wall-message');
   const frontpageInput = document.getElementById('wall-frontpage');
+  const targetInput = document.getElementById('wall-target-member');
+
+  const payload = {
+    title: titleInput.value,
+    message: messageInput.value,
+    showOnFrontpage: currentUser && currentUser.role === 'styret' ? frontpageInput.checked : false,
+  };
+
+  if (currentUser && currentUser.role === 'styret' && targetInput) {
+    const targetValue = String(targetInput.value || '').trim();
+    if (targetValue) {
+      payload.targetMemberId = Number(targetValue);
+    }
+  }
 
   try {
-    await apiFetch('/api/wall/posts', {
+    const response = await apiFetch('/api/wall/posts', {
       method: 'POST',
-      body: JSON.stringify({
-        title: titleInput.value,
-        message: messageInput.value,
-        showOnFrontpage: currentUser && currentUser.role === 'styret' ? frontpageInput.checked : false,
-      }),
+      body: JSON.stringify(payload),
     });
 
     titleInput.value = '';
@@ -306,7 +420,16 @@ async function handleWallSubmit(event) {
     if (frontpageInput) {
       frontpageInput.checked = false;
     }
-    setStatus('Innlegget ble publisert.');
+    if (targetInput) {
+      targetInput.value = '';
+    }
+
+    if (response.warning) {
+      setStatus(`Innlegget ble publisert. ${response.warning}`);
+    } else {
+      setStatus('Innlegget ble publisert.');
+    }
+
     await loadWall();
   } catch (error) {
     setStatus(error.message, true);
@@ -330,6 +453,7 @@ async function handleLogout() {
 }
 
 document.addEventListener('DOMContentLoaded', async () => {
+  resetTargetMembers();
   document.getElementById('login-form')?.addEventListener('submit', handleLogin);
   document.getElementById('wall-form')?.addEventListener('submit', handleWallSubmit);
   document.getElementById('logout-button')?.addEventListener('click', handleLogout);

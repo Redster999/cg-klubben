@@ -16,6 +16,7 @@ module.exports = async function handler(req, res) {
 
   return sendJson(res, 200, {
     authenticated: true,
+    memberId: session.memberId || null,
     role: session.role,
     name: session.name || '',
     isAdmin,

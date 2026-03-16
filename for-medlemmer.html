@@ -90,6 +90,13 @@
               <label for="wall-message">Melding</label>
               <textarea id="wall-message" rows="4" maxlength="4000" required></textarea>
 
+              <div id="wall-target-row" class="wall-target-row" hidden>
+                <label for="wall-target-member">Send varsel til medlem</label>
+                <select id="wall-target-member">
+                  <option value="">Ingen målrettet varsel</option>
+                </select>
+              </div>
+
               <label id="wall-frontpage-row" class="check-row" for="wall-frontpage" hidden>
                 <input id="wall-frontpage" type="checkbox" />
                 Forside

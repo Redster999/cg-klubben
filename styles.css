@@ -277,6 +277,27 @@ body {
   padding: 10px 12px;
 }
 
+.wall-target-row {
+  display: grid;
+  gap: 6px;
+}
+
+.wall-target-row label {
+  font-family: "Libre Franklin", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.wall-target-row select {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  color: #111;
+  font-family: "Libre Franklin", Arial, sans-serif;
+  font-size: 15px;
+  padding: 10px 12px;
+}
+
 .check-row {
   align-items: center;
   display: flex;
@@ -402,6 +423,23 @@ body {
   color: var(--muted);
   font-family: "Libre Franklin", Arial, sans-serif;
   font-size: 13px;
+}
+
+.wall-target {
+  color: #0e2b3c;
+  font-family: "Libre Franklin", Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.wall-reply-status {
+  color: var(--muted);
+  font-family: "Libre Franklin", Arial, sans-serif;
+  font-size: 13px;
+}
+
+.reply-btn {
+  margin-top: 6px;
 }
 
 .status-msg {
