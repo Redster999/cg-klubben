@@ -40,6 +40,26 @@ function getConfig() {
   };
 }
 
+function getMissingConfigKeys(config) {
+  const missing = [];
+  if (!config.host) {
+    missing.push('SMTP_HOST');
+  }
+  if (!config.port) {
+    missing.push('SMTP_PORT');
+  }
+  if (!config.user) {
+    missing.push('SMTP_USER');
+  }
+  if (!config.pass) {
+    missing.push('SMTP_PASS');
+  }
+  if (!config.fromEmail) {
+    missing.push('MAIL_FROM_EMAIL');
+  }
+  return missing;
+}
+
 function configKey(config) {
   return `${config.host}:${config.port}:${config.user}:${config.secure ? 'secure' : 'plain'}`;
 }
@@ -71,30 +91,71 @@ function isMailConfigured() {
   return getConfig().configured;
 }
 
+function mailDebugContext({ to, subject } = {}) {
+  const config = getConfig();
+  return {
+    configured: config.configured,
+    fromEmail: config.fromEmail || null,
+    host: config.host || null,
+    missingConfig: getMissingConfigKeys(config),
+    port: config.port || null,
+    secure: config.secure,
+    smtpUser: config.user || null,
+    subject: subject || null,
+    to: to || null,
+  };
+}
+
 async function sendMail({ to, subject, text }) {
   const config = getConfig();
   if (!config.configured) {
     const error = new Error('Mail is not configured');
     error.code = 'MAIL_NOT_CONFIGURED';
+    error.details = {
+      missingConfig: getMissingConfigKeys(config),
+    };
     throw error;
   }
 
   if (!to || !subject || !text) {
     const error = new Error('Missing e-mail parameters');
     error.code = 'MAIL_INVALID_ARGUMENTS';
+    error.details = {
+      toProvided: Boolean(to),
+      subjectProvided: Boolean(subject),
+      textProvided: Boolean(text),
+    };
     throw error;
   }
 
-  const transporter = getTransport(config);
-  return transporter.sendMail({
-    from: fromHeader(config),
-    subject,
-    text,
-    to,
-  });
+  try {
+    const transporter = getTransport(config);
+    return await transporter.sendMail({
+      from: fromHeader(config),
+      subject,
+      text,
+      to,
+    });
+  } catch (error) {
+    error.code = error.code || 'MAIL_SEND_FAILED';
+    error.details = {
+      command: error.command || null,
+      errno: error.errno || null,
+      host: config.host,
+      port: config.port,
+      response: error.response || null,
+      responseCode: error.responseCode || null,
+      secure: config.secure,
+      smtpUser: config.user,
+      syscall: error.syscall || null,
+      to,
+    };
+    throw error;
+  }
 }
 
 module.exports = {
   isMailConfigured,
+  mailDebugContext,
   sendMail,
 };

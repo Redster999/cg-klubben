@@ -10,7 +10,7 @@ const {
   unauthorized,
 } = require('../_lib/http');
 const { query } = require('../_lib/db');
-const { sendMail } = require('../_lib/mail');
+const { mailDebugContext, sendMail } = require('../_lib/mail');
 const { getSession } = require('../_lib/session');
 
 function requireAuthenticated(req, res) {
@@ -274,10 +274,23 @@ module.exports = async function handler(req, res) {
           [item.id]
         );
       } catch (error) {
-        console.error('wall post notification error', error);
+        console.error('wall post notification error', {
+          code: error.code || null,
+          details: error.details || null,
+          message: error.message || null,
+          postId: item.id,
+          ...mailDebugContext({
+            to: targetMember.email,
+            subject: 'Ny melding på Veggen',
+          }),
+        });
         warning = 'Innlegget ble publisert, men e-postvarslet kunne ikke sendes.';
       }
     } else if (targetMember && !targetMember.email) {
+      console.warn('wall post notification skipped: target has no e-mail', {
+        postId: item.id,
+        targetMemberId: targetMember.id,
+      });
       warning = 'Innlegget ble publisert, men valgt medlem mangler e-postadresse.';
     }
 

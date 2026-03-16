@@ -1,6 +1,6 @@
 const { badRequest, forbidden, isSameOrigin, methodNotAllowed, parseJsonBody, sendJson, serverError, unauthorized } = require('../_lib/http');
 const { query } = require('../_lib/db');
-const { sendMail } = require('../_lib/mail');
+const { mailDebugContext, sendMail } = require('../_lib/mail');
 const { getSession } = require('../_lib/session');
 
 function requireAuthenticated(req, res) {
@@ -100,7 +100,16 @@ module.exports = async function handler(req, res) {
         });
         notificationSent = true;
       } catch (error) {
-        console.error('wall reply notification error', error);
+        console.error('wall reply notification error', {
+          code: error.code || null,
+          details: error.details || null,
+          message: error.message || null,
+          postId,
+          ...mailDebugContext({
+            to: recipient,
+            subject: 'Svar på melding på Veggen',
+          }),
+        });
         warning = 'Svar ble registrert, men e-postvarsel kunne ikke sendes.';
       }
     } else {
