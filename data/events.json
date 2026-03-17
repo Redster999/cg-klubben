@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-03-17T07:35:36.190562+00:00",
+  "generatedAt": "2026-03-17T13:55:59.056895+00:00",
   "source": "https://www.fellesforbundet.no/aktuelt/kurs-og-arrangementer/",
-  "totalHits": 62,
+  "totalHits": 63,
   "items": [
     {
       "title": "Tillitsvalgt 1 - Innlandet",
@@ -48,6 +48,14 @@
       "url": "https://www.fellesforbundet.no/aktuelt/kurs-og-arrangementer/2026/tillitsvalgt-1--sor-ost-langesund/",
       "startDate": "2026-04-13T00:00:00",
       "location": "Quality Hotel Skj\u00e6rg\u00e5rden, Langesund",
+      "type": "Kurs",
+      "monthSection": "April"
+    },
+    {
+      "title": "Tillitsvalgt 1 - Region S\u00f8r-Vest",
+      "url": "https://www.fellesforbundet.no/aktuelt/kurs-og-arrangementer/2026/arkiv-2026/tillitsvalgt-1-sor-vest-stavanger-april/",
+      "startDate": "2026-04-13T00:00:00",
+      "location": "Clarion Hotel Energy, Stavanger",
       "type": "Kurs",
       "monthSection": "April"
     },
@@ -152,14 +160,6 @@
       "url": "https://www.fellesforbundet.no/aktuelt/kurs-og-arrangementer/2026/kvinnenettverket-i-telemark---sor-ost/",
       "startDate": "2026-05-08T00:00:00",
       "location": "Krager\u00f8 Resort",
-      "type": "Kurs",
-      "monthSection": "Mai"
-    },
-    {
-      "title": "Tillitsvalg 1 - Region Vest",
-      "url": "https://www.fellesforbundet.no/aktuelt/kurs-og-arrangementer/2026/tillitsvalg-1--vest-flesland/",
-      "startDate": "2026-05-08T00:00:00",
-      "location": "Scandic Flesland Airport",
       "type": "Kurs",
       "monthSection": "Mai"
     }
