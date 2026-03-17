@@ -3,7 +3,8 @@ name: Update Fellesforbundet Feeds
 on:
   workflow_dispatch:
   schedule:
-    - cron: "27 */6 * * *"
+    - cron: "0 5 * * *"
+    - cron: "0 6 * * *"
 
 jobs:
   update-feeds:
@@ -12,18 +13,41 @@ jobs:
       contents: write
 
     steps:
+      - name: Check Oslo schedule
+        id: schedule_guard
+        run: |
+          # GitHub schedules are in UTC and can start a few minutes late.
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "should_run=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          oslo_hour="$(TZ=Europe/Oslo date +%H)"
+          if [ "$oslo_hour" = "07" ]; then
+            echo "should_run=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          echo "should_run=false" >> "$GITHUB_OUTPUT"
+          oslo_time="$(TZ=Europe/Oslo date +%H:%M)"
+          echo "Skipping outside the 07 hour in Europe/Oslo. Current local time: $oslo_time"
+
       - name: Checkout repository
+        if: steps.schedule_guard.outputs.should_run == 'true'
         uses: actions/checkout@v6
 
       - name: Set up Python
+        if: steps.schedule_guard.outputs.should_run == 'true'
         uses: actions/setup-python@v6
         with:
           python-version: "3.x"
 
       - name: Update feed files
-        run: python scripts/update_fellesforbundet_feeds.py
+        if: steps.schedule_guard.outputs.should_run == 'true'
+        run: python3 scripts/update_fellesforbundet_feeds.py
 
       - name: Commit and push changes
+        if: steps.schedule_guard.outputs.should_run == 'true'
         run: |
           if git diff --quiet; then
             echo "No feed updates"

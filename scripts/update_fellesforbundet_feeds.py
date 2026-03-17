@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import argparse
 import json
 from datetime import datetime, timezone
 from email.utils import parsedate_to_datetime
@@ -215,9 +216,26 @@ def write_json(path: Path, data: dict[str, Any]) -> None:
         handle.write("\n")
 
 
-def main() -> None:
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(
+        description="Fetch Fellesforbundet news/course feeds and store them as local JSON files."
+    )
+    group = parser.add_mutually_exclusive_group()
+    group.add_argument(
+        "--news-only",
+        action="store_true",
+        help="Only update data/news.json.",
+    )
+    group.add_argument(
+        "--events-only",
+        action="store_true",
+        help="Only update data/events.json.",
+    )
+    return parser.parse_args()
+
+
+def update_news() -> None:
     news_payload = fetch_json(NEWS_ENDPOINT, {"lang": "no", "page": 1})
-    events_payload = fetch_json(EVENTS_ENDPOINT, {"lang": "no", "page": 1, "type": "Kurs"})
     frifag_rss = fetch_text(FRIFAG_NEWS_FEED_URL, {"User-Agent": HEADERS["User-Agent"]})
 
     merged_news = merge_news_items(
@@ -226,10 +244,23 @@ def main() -> None:
     )
 
     write_json(NEWS_OUTPUT, build_news_payload(merged_news))
-    write_json(EVENTS_OUTPUT, normalize_events(events_payload))
-
     print(f"Updated {NEWS_OUTPUT}")
+
+
+def update_events() -> None:
+    events_payload = fetch_json(EVENTS_ENDPOINT, {"lang": "no", "page": 1, "type": "Kurs"})
+    write_json(EVENTS_OUTPUT, normalize_events(events_payload))
     print(f"Updated {EVENTS_OUTPUT}")
+
+
+def main() -> None:
+    args = parse_args()
+
+    if not args.events_only:
+        update_news()
+
+    if not args.news_only:
+        update_events()
 
 
 if __name__ == "__main__":
