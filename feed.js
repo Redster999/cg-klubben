@@ -1,8 +1,8 @@
 const NEWS_LIST_ID = "aktuelt-list";
 const COURSES_LIST_ID = "kurs-list";
 const FRONTPAGE_WALL_LIST_ID = "frontpage-wall-list";
-const NEWS_JSON_PATH = "/api/feeds/news";
-const COURSES_JSON_PATH = "/api/feeds/events";
+const NEWS_JSON_PATHS = ["/api/feeds/news", "data/news.json"];
+const COURSES_JSON_PATHS = ["/api/feeds/events", "data/events.json"];
 const FRONTPAGE_WALL_PATH = "/api/wall/frontpage";
 const MAX_NEWS_ITEMS = 10;
 const MAX_COURSE_ITEMS = 6;
@@ -150,13 +150,24 @@ function renderFrontpageWall(listElement, payload) {
   setListItems(listElement, rendered);
 }
 
-async function loadJson(path) {
-  const response = await fetch(path);
-  if (!response.ok) {
-    throw new Error(`Kunne ikke hente ${path} (${response.status})`);
+async function loadJson(paths) {
+  const candidates = Array.isArray(paths) ? paths : [paths];
+  let lastError = null;
+
+  for (const path of candidates) {
+    try {
+      const response = await fetch(path, { cache: "no-store" });
+      if (!response.ok) {
+        throw new Error(`Kunne ikke hente ${path} (${response.status})`);
+      }
+
+      return response.json();
+    } catch (error) {
+      lastError = error;
+    }
   }
 
-  return response.json();
+  throw lastError || new Error("Kunne ikke hente feed-data");
 }
 
 async function initFeeds() {
@@ -170,8 +181,8 @@ async function initFeeds() {
 
   try {
     const [newsPayload, coursePayload] = await Promise.all([
-      loadJson(NEWS_JSON_PATH),
-      loadJson(COURSES_JSON_PATH),
+      loadJson(NEWS_JSON_PATHS),
+      loadJson(COURSES_JSON_PATHS),
     ]);
 
     renderNews(newsList, newsPayload);

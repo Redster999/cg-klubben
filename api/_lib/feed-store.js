@@ -32,16 +32,24 @@ async function readFallback(feedKey) {
 async function getFeedSnapshot(feedKey) {
   assertFeedKey(feedKey);
 
-  const result = await query(
-    `SELECT payload,
-            updated_at AS "updatedAt"
-     FROM feed_snapshots
-     WHERE feed_key = $1`,
-    [feedKey]
-  );
+  if (!process.env.DATABASE_URL) {
+    return readFallback(feedKey);
+  }
 
-  if (result.rows[0] && result.rows[0].payload) {
-    return result.rows[0].payload;
+  try {
+    const result = await query(
+      `SELECT payload,
+              updated_at AS "updatedAt"
+       FROM feed_snapshots
+       WHERE feed_key = $1`,
+      [feedKey]
+    );
+
+    if (result.rows[0] && result.rows[0].payload) {
+      return result.rows[0].payload;
+    }
+  } catch (error) {
+    console.error('feed snapshot read error', error);
   }
 
   return readFallback(feedKey);
