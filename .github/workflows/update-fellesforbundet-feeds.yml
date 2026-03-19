@@ -10,7 +10,7 @@ jobs:
   update-feeds:
     runs-on: ubuntu-latest
     permissions:
-      contents: write
+      contents: read
 
     steps:
       - name: Check Oslo schedule
@@ -46,16 +46,27 @@ jobs:
         if: steps.schedule_guard.outputs.should_run == 'true'
         run: python3 scripts/update_fellesforbundet_feeds.py
 
-      - name: Commit and push changes
+      - name: Sync feed snapshots
         if: steps.schedule_guard.outputs.should_run == 'true'
+        env:
+          FEED_SYNC_BASE_URL: ${{ secrets.FEED_SYNC_BASE_URL }}
+          FEED_SYNC_TOKEN: ${{ secrets.FEED_SYNC_TOKEN }}
         run: |
-          if git diff --quiet; then
-            echo "No feed updates"
-            exit 0
-          fi
+          set -euo pipefail
 
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/news.json data/events.json
-          git commit -m "Oppdater Fellesforbundet-feeds"
-          git push
+          : "${FEED_SYNC_BASE_URL:?Missing FEED_SYNC_BASE_URL secret}"
+          : "${FEED_SYNC_TOKEN:?Missing FEED_SYNC_TOKEN secret}"
+
+          curl --fail --silent --show-error --retry 3 \
+            -X POST \
+            -H "Authorization: Bearer ${FEED_SYNC_TOKEN}" \
+            -H "Content-Type: application/json" \
+            --data-binary @data/news.json \
+            "${FEED_SYNC_BASE_URL%/}/api/feeds/news"
+
+          curl --fail --silent --show-error --retry 3 \
+            -X POST \
+            -H "Authorization: Bearer ${FEED_SYNC_TOKEN}" \
+            -H "Content-Type: application/json" \
+            --data-binary @data/events.json \
+            "${FEED_SYNC_BASE_URL%/}/api/feeds/events"

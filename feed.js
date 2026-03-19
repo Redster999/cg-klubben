@@ -1,8 +1,8 @@
 const NEWS_LIST_ID = "aktuelt-list";
 const COURSES_LIST_ID = "kurs-list";
 const FRONTPAGE_WALL_LIST_ID = "frontpage-wall-list";
-const NEWS_JSON_PATH = "data/news.json";
-const COURSES_JSON_PATH = "data/events.json";
+const NEWS_JSON_PATH = "/api/feeds/news";
+const COURSES_JSON_PATH = "/api/feeds/events";
 const FRONTPAGE_WALL_PATH = "/api/wall/frontpage";
 const MAX_NEWS_ITEMS = 10;
 const MAX_COURSE_ITEMS = 6;
@@ -151,7 +151,7 @@ function renderFrontpageWall(listElement, payload) {
 }
 
 async function loadJson(path) {
-  const response = await fetch(path, { cache: "no-store" });
+  const response = await fetch(path);
   if (!response.ok) {
     throw new Error(`Kunne ikke hente ${path} (${response.status})`);
   }

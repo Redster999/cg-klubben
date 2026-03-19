@@ -130,6 +130,14 @@ async function ensureSchema() {
       ON CONFLICT (id) DO NOTHING;
     `);
 
+    await client.query(`
+      CREATE TABLE IF NOT EXISTS feed_snapshots (
+        feed_key TEXT PRIMARY KEY,
+        payload JSONB NOT NULL,
+        updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+      );
+    `);
+
     await client.query('COMMIT');
     schemaReady = true;
   } catch (error) {
