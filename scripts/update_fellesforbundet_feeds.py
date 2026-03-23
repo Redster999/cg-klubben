@@ -12,6 +12,7 @@ from typing import Any
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 from xml.etree import ElementTree as ET
+from zoneinfo import ZoneInfo
 
 BASE_URL = "https://www.fellesforbundet.no"
 NEWS_ENDPOINT = "/api/news"
@@ -22,6 +23,9 @@ HEADERS = {
     "X-Requested-With": "XMLHttpRequest",
     "User-Agent": "cg-klubben-feed-updater/1.0",
 }
+FEED_TIME_ZONE = ZoneInfo("Europe/Oslo")
+NEWS_ITEM_LIMIT = 40
+EVENT_ITEM_LIMIT = 20
 
 ROOT_DIR = Path(__file__).resolve().parents[1]
 DATA_DIR = ROOT_DIR / "data"
@@ -172,16 +176,47 @@ def merge_news_items(*collections: list[dict[str, Any]]) -> list[dict[str, Any]]
     return ordered
 
 
+def sanitize_news_items(items: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    ordered = sorted(
+        (item for item in items if item.get("url") and item.get("title")),
+        key=lambda item: parse_iso_datetime(item.get("publishedAt", "")),
+        reverse=True,
+    )
+    return ordered[:NEWS_ITEM_LIMIT]
+
+
 def build_news_payload(items: list[dict[str, Any]]) -> dict[str, Any]:
+    sanitized_items = sanitize_news_items(items)
     return {
         "generatedAt": datetime.now(timezone.utc).isoformat(),
         "sources": [
             {"name": "Fellesforbundet", "url": make_absolute("/aktuelt/nyheter/")},
             {"name": "FriFagbevegelse", "url": FRIFAG_SECTION_URL},
         ],
-        "totalHits": len(items),
-        "items": items,
+        "totalHits": len(sanitized_items),
+        "items": sanitized_items,
     }
+
+
+def current_day_key() -> str:
+    return datetime.now(FEED_TIME_ZONE).date().isoformat()
+
+
+def extract_event_day_key(value: str) -> str:
+    return value[:10] if len(value) >= 10 else ""
+
+
+def sanitize_event_items(items: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    today_key = current_day_key()
+    filtered: list[dict[str, Any]] = []
+
+    for item in items:
+        day_key = extract_event_day_key(item.get("startDate", ""))
+        if day_key and day_key >= today_key:
+            filtered.append(item)
+
+    filtered.sort(key=lambda item: (extract_event_day_key(item.get("startDate", "")), item.get("title", "")))
+    return filtered[:EVENT_ITEM_LIMIT]
 
 
 def normalize_events(payload: dict[str, Any]) -> dict[str, Any]:
@@ -201,11 +236,12 @@ def normalize_events(payload: dict[str, Any]) -> dict[str, Any]:
                 }
             )
 
+    sanitized_events = sanitize_event_items(events)
     return {
         "generatedAt": datetime.now(timezone.utc).isoformat(),
         "source": make_absolute("/aktuelt/kurs-og-arrangementer/"),
-        "totalHits": payload.get("totalHits", 0),
-        "items": events,
+        "totalHits": len(sanitized_events),
+        "items": sanitized_events,
     }
 
 

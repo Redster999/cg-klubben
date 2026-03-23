@@ -41,6 +41,38 @@ function formatEventDate(dateString) {
   return date.toLocaleDateString("nb-NO");
 }
 
+function getTodayKeyInOslo() {
+  const parts = new Intl.DateTimeFormat("en-GB", {
+    timeZone: "Europe/Oslo",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).formatToParts(new Date());
+
+  const values = {};
+  parts.forEach((part) => {
+    if (part.type === "year" || part.type === "month" || part.type === "day") {
+      values[part.type] = part.value;
+    }
+  });
+
+  return `${values.year}-${values.month}-${values.day}`;
+}
+
+function extractEventDayKey(dateString) {
+  if (typeof dateString !== "string") {
+    return "";
+  }
+
+  const match = /^(\d{4}-\d{2}-\d{2})/.exec(dateString);
+  return match ? match[1] : "";
+}
+
+function isRelevantCourseItem(item) {
+  const dayKey = extractEventDayKey(item && item.startDate);
+  return Boolean(dayKey) && dayKey >= getTodayKeyInOslo();
+}
+
 function setListItems(listElement, items) {
   listElement.textContent = "";
   items.forEach((item) => {
@@ -94,7 +126,9 @@ function renderNews(listElement, payload) {
 }
 
 function renderCourses(listElement, payload) {
-  const items = (payload && payload.items ? payload.items : []).slice(0, MAX_COURSE_ITEMS);
+  const items = (payload && payload.items ? payload.items : [])
+    .filter(isRelevantCourseItem)
+    .slice(0, MAX_COURSE_ITEMS);
 
   if (!items.length) {
     setListItems(listElement, [createStatusItem("Ingen kurs tilgjengelig akkurat na.")]);

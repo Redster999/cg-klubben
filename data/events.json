@@ -1,21 +1,13 @@
 {
-  "generatedAt": "2026-03-19T06:45:27.618198+00:00",
+  "generatedAt": "2026-03-23T11:09:04.795085+00:00",
   "source": "https://www.fellesforbundet.no/aktuelt/kurs-og-arrangementer/",
-  "totalHits": 63,
+  "totalHits": 20,
   "items": [
     {
-      "title": "Tillitsvalgt 1 - Innlandet",
-      "url": "https://www.fellesforbundet.no/aktuelt/kurs-og-arrangementer/2026/tillitsvalgt1--innlandet-elverum/",
-      "startDate": "2026-03-16T00:00:00",
-      "location": "Hotel Thon Partner Central",
-      "type": "Kurs",
-      "monthSection": "Mars"
-    },
-    {
-      "title": "Tillitsvalgt 2 - Region Midt",
-      "url": "https://www.fellesforbundet.no/aktuelt/kurs-og-arrangementer/2026/tillitsvalgt-2--trondelag-more-og-romsdal-stjordal/",
-      "startDate": "2026-03-16T00:00:00",
-      "location": "Scandic Hell, Stj\u00f8rdal",
+      "title": "Tillitsvalgt 1 - Region Midt",
+      "url": "https://www.fellesforbundet.no/aktuelt/kurs-og-arrangementer/2026/tillitsvalgt-1-trondelag-more-og-romsdal-aalesund/",
+      "startDate": "2026-03-23T00:00:00",
+      "location": "Scandic Parken \u00c5lesund",
       "type": "Kurs",
       "monthSection": "Mars"
     },
@@ -28,14 +20,6 @@
       "monthSection": "Mars"
     },
     {
-      "title": "Tillitsvalgt 1 - Region Midt",
-      "url": "https://www.fellesforbundet.no/aktuelt/kurs-og-arrangementer/2026/tillitsvalgt-1-trondelag-more-og-romsdal-aalesund/",
-      "startDate": "2026-03-23T00:00:00",
-      "location": "Scandic Parken \u00c5lesund",
-      "type": "Kurs",
-      "monthSection": "Mars"
-    },
-    {
       "title": "Ungdomskurs \u2013 Region \u00d8st",
       "url": "https://www.fellesforbundet.no/aktuelt/kurs-og-arrangementer/2026/arkiv-2026/ungdomskurs--region-ost-april/",
       "startDate": "2026-04-10T00:00:00",
@@ -44,18 +28,18 @@
       "monthSection": "April"
     },
     {
-      "title": "Tillitsvalgt 1 - Region S\u00f8r-\u00d8st",
-      "url": "https://www.fellesforbundet.no/aktuelt/kurs-og-arrangementer/2026/tillitsvalgt-1--sor-ost-langesund/",
-      "startDate": "2026-04-13T00:00:00",
-      "location": "Quality Hotel Skj\u00e6rg\u00e5rden, Langesund",
-      "type": "Kurs",
-      "monthSection": "April"
-    },
-    {
       "title": "Tillitsvalgt 1 - Region S\u00f8r-Vest",
       "url": "https://www.fellesforbundet.no/aktuelt/kurs-og-arrangementer/2026/arkiv-2026/tillitsvalgt-1-sor-vest-stavanger-april/",
       "startDate": "2026-04-13T00:00:00",
       "location": "Clarion Hotel Energy, Stavanger",
+      "type": "Kurs",
+      "monthSection": "April"
+    },
+    {
+      "title": "Tillitsvalgt 1 - Region S\u00f8r-\u00d8st",
+      "url": "https://www.fellesforbundet.no/aktuelt/kurs-og-arrangementer/2026/tillitsvalgt-1--sor-ost-langesund/",
+      "startDate": "2026-04-13T00:00:00",
+      "location": "Quality Hotel Skj\u00e6rg\u00e5rden, Langesund",
       "type": "Kurs",
       "monthSection": "April"
     },
@@ -101,7 +85,7 @@
     },
     {
       "title": "Havbruk region vest",
-      "url": "https://www.fellesforbundet.no/aktuelt/kurs-og-arrangementer/2026/havbruk-region-vest/",
+      "url": "https://www.fellesforbundet.no/aktuelt/kurs-og-arrangementer/2026/arkiv-2026/havbruk-region-vest/",
       "startDate": "2026-04-23T00:00:00",
       "location": "Scandic Flesland Airport",
       "type": "Kurs",
@@ -124,18 +108,18 @@
       "monthSection": "April"
     },
     {
-      "title": "Tillitsvalgt 2 - Region \u00d8st",
-      "url": "https://www.fellesforbundet.no/aktuelt/kurs-og-arrangementer/2026/tillitsvalgt-2-ost-lillestrom/",
-      "startDate": "2026-05-04T00:00:00",
-      "location": "Folkets Hus Lillestr\u00f8m",
-      "type": "Kurs",
-      "monthSection": "Mai"
-    },
-    {
       "title": "Tillitsvalgt 1 - Region S\u00f8r-Vest",
       "url": "https://www.fellesforbundet.no/aktuelt/kurs-og-arrangementer/2026/tillitsvalgt-1-sor-vest-haugesund/",
       "startDate": "2026-05-04T00:00:00",
       "location": "Haugesund",
+      "type": "Kurs",
+      "monthSection": "Mai"
+    },
+    {
+      "title": "Tillitsvalgt 2 - Region \u00d8st",
+      "url": "https://www.fellesforbundet.no/aktuelt/kurs-og-arrangementer/2026/tillitsvalgt-2-ost-lillestrom/",
+      "startDate": "2026-05-04T00:00:00",
+      "location": "Folkets Hus Lillestr\u00f8m",
       "type": "Kurs",
       "monthSection": "Mai"
     },
@@ -160,6 +144,22 @@
       "url": "https://www.fellesforbundet.no/aktuelt/kurs-og-arrangementer/2026/kvinnenettverket-i-telemark---sor-ost/",
       "startDate": "2026-05-08T00:00:00",
       "location": "Krager\u00f8 Resort",
+      "type": "Kurs",
+      "monthSection": "Mai"
+    },
+    {
+      "title": "Tillitsvalg 1 - Region Vest",
+      "url": "https://www.fellesforbundet.no/aktuelt/kurs-og-arrangementer/2026/tillitsvalg-1--vest-flesland/",
+      "startDate": "2026-05-08T00:00:00",
+      "location": "Scandic Flesland Airport",
+      "type": "Kurs",
+      "monthSection": "Mai"
+    },
+    {
+      "title": "Sekret\u00e6ren i klubb - Indre-\u00d8st",
+      "url": "https://www.fellesforbundet.no/aktuelt/kurs-og-arrangementer/2026/sekretaren-i-klubb---indre-ost/",
+      "startDate": "2026-05-21T00:00:00",
+      "location": "Fellesforbundet Avd 23 - Raufoss Jern og Metall",
       "type": "Kurs",
       "monthSection": "Mai"
     }
